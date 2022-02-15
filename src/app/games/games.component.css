@@ -1,0 +1,54 @@
+.page-content {
+  display: flex;
+  gap: 30px;
+}
+
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80%;
+}
+
+.card {
+  width: calc((100% - 20px * 2) / 3);
+  border: 1px solid #000;
+  border-radius: 10px;
+  position: relative;
+  z-index: 0;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.card_img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.card_header {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card_price {
+  align-self: flex-end;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
