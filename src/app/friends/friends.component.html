@@ -1,1 +1,29 @@
-<p>friends works!</p>
+<div class="container">
+  <h2 class="title">Friends</h2>
+  <div>
+    <p class="form-title">Search Friends</p>
+    <div class="search-form">
+      <input type="text" placeholder="Search Friends" [(ngModel)]="searchValue">
+      <button class="search-btn" (click)="searchFriends()">Search</button>
+    </div>
+  </div>
+  <div class="friends" *ngIf="!showSearchResult">
+    <h2 class="title">My Friends</h2>
+    <div class="friend-item" *ngFor="let friend of userFriendList">
+      <p>{{ friend.name }}</p>
+      <button class="remove-btn" (click)="removeFriend(friend)">Remove Friend</button>
+    </div>
+  </div>
+
+  <div class="friends" *ngIf="showSearchResult">
+    <h2 class="title">Search Friends: {{ searchValue }}</h2>
+    <div class="friend-item" *ngFor="let friend of searchResult">
+      <p>{{ friend.name }}</p>
+      <button class="add-btn" (click)="addFriend(friend)">Add Friend</button>
+    </div>
+    <div class="back-btn-container">
+      <p *ngIf="noResults">No Results</p>
+      <button class="back-btn" (click)="backToFriends()">Back to my friends</button>
+    </div>
+  </div>
+</div>
