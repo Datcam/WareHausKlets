@@ -1,10 +1,10 @@
 <div class="header">
   <img src="../../assets/steam-logo.svg" alt="steam-logo" class="logo">
   <nav class="navigation">
-    <a routerLink="/games">Games</a>
-    <a routerLink="/library">Library</a>
-    <a routerLink="/friends">Friends</a>
-    <a routerLink="/profile">Profile</a>
+    <a routerLink="/games" (click)="addClass($event)">Games</a>
+    <a routerLink="/library" (click)="addClass($event)">Library</a>
+    <a routerLink="/friends" (click)="addClass($event)">Friends</a>
+    <a routerLink="/profile" (click)="addClass($event)">Profile</a>
   </nav>
 </div>
 
