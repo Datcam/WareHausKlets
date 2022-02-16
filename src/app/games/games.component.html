@@ -5,8 +5,6 @@
       <input class="search_input" type="search" name="search" placeholder="Search games">
       <button class="btn" type="submit">Search</button>
     </form>
-  </div>
-  <div class="container">
     <h3 class="section_title">Featured Games</h3>
     <div class="page-content">
       <div class="feed">
@@ -24,14 +22,14 @@
         <form (submit)="filterGames($event)">
           <h4>Filter by price</h4>
           {{minPrice}}&#8372;
-          <input name="price" type="range" step="10" [min]="minPrice" [max]="maxPrice">
+          <input class="price_range" name="price" type="range" step="10" [min]="minPrice" [max]="maxPrice">
           {{maxPrice}}&#8372;
           <h4>Filter by tags</h4>
           <div class="tags">
             <label *ngFor="let tag of tags">
-              <input type="checkbox" name="tag" [value]="tag" >
+              <input type="checkbox" name="tag" [value]="tag">
               <span>{{tag}}</span>
-          </label>
+            </label>
           </div>
           <button class="btn filter-btn" type="submit">Filter</button>
         </form>
