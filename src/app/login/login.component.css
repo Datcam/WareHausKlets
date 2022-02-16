@@ -1,0 +1,30 @@
+.red-text{
+    color: red;
+}
+.card-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+.card{
+    background-color: white;
+    height: 340px;
+    width: 320px;
+    left: 560px;
+    top: 280px;
+    border-radius: 4px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+input{
+    width: 200px;
+}
+button{
+    color: white;
+    background-color: #6C69FF;
+    width: 200px;
+    height: 32px;
+}
