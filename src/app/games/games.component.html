@@ -2,8 +2,8 @@
   <div class="container">
     <h2 class="section_title">Games</h2>
     <form class="search-from">
-      <input type="search" name="search" placeholder="Search game">
-      <button type="submit">Search</button>
+      <input class="search_input" type="search" name="search" placeholder="Search games">
+      <button class="btn" type="submit">Search</button>
     </form>
   </div>
   <div class="container">
@@ -13,10 +13,9 @@
         <div class="card" *ngFor="let game of data">
           <img class="card_img" [src]="game.img" [alt]="game.name">
           <div class="card_header">
-            <h4>{{game.name}}</h4>
+            <h4 class="card_name">{{game.name}}</h4>
             <h4 class="card_price">{{game.price}} UAH</h4>
           </div>
-          <h5>Genre</h5>
           <p class="card_text">{{game.description}}</p>
           <button class="card_btn">Add to Library</button>
         </div>
@@ -32,7 +31,7 @@
               <span>{{tag}}</span>
             </label>
           </div>
-          <button type="submit">Filter</button>
+          <button class="btn filter-btn" type="submit">Filter</button>
         </form>
       </div>
     </div>
