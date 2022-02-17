@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from './../services/auth.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,9 +16,8 @@ export class LoginComponent implements OnInit {
     arr = [{ id: 1, email:"yarmannagibator@gmail.com", password:"toothpaste"},{id:2, email:"mmarkiv0413@outlook.com", password:"123456"}]
     check!:boolean
     noncheck:boolean = false
-  constructor() {
-    
-   }
+
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -29,6 +31,10 @@ export class LoginComponent implements OnInit {
         this.check = true;
         this.noncheck = false;
         console.log(this.check);
+
+        this.auth.logIn()
+        this.router.navigate(['profile']);
+        return;
       }
       else {this.check = false;
         console.log(this.check);}
