@@ -1,22 +1,24 @@
-import { AVAILABLE_FRIENDS } from '../mock-friends-data';
 import { Component, OnInit } from '@angular/core';
-import { CURRENT_USER } from '../mock-friends-data';
+import { AuthService } from './../services/auth.service';
+import { FRIENDS } from '../mock-data';
+import { Friend } from '../models/friend.model';
 
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
   styleUrls: ['./friends.component.css']
 })
+
 export class FriendsComponent implements OnInit {
 
-  userFriendList = CURRENT_USER.friends;
-  availableFriends = AVAILABLE_FRIENDS;
+  userFriendList: Friend[] = this.auth.getCurrentUser().friends;
+  availableFriends: Friend[] = FRIENDS;
+  searchResult!: Friend[];
   showSearchResult: boolean = false;
   searchValue: string = '';
-  searchResult!: {id: number, name: string}[];
   noResults: boolean = false;
 
-  constructor() { }
+  constructor(private auth: AuthService) {}
 
   ngOnInit(): void {
   }
@@ -35,7 +37,7 @@ export class FriendsComponent implements OnInit {
     }
   }
 
-  removeFriend(removedFriend: {id: number, name: string}) {
+  removeFriend(removedFriend: Friend) {
     this.userFriendList.map((friend, idx, arr) => {
       if (friend.id === removedFriend.id) {
         arr.splice(idx, 1)
@@ -49,7 +51,7 @@ export class FriendsComponent implements OnInit {
     this.availableFriends.push(friend)
   }
 
-  addFriend(addedFriend: {id: number, name: string}) {
+  addFriend(addedFriend: Friend) {
     this.availableFriends.map((friend, idx, arr) => {
       if (friend.id === addedFriend.id) {
         arr.splice(idx, 1)

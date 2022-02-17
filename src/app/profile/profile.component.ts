@@ -1,7 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginComponent } from '../login/login.component';
-import { CURRENT_USER } from '../mock-friends-data';
+import { User } from '../models/user.model';
 import { AuthService } from '../services/auth.service';
 
 
@@ -16,11 +15,12 @@ export class ProfileComponent implements OnInit {
 
   form!: FormGroup
   enteredEmail! : string
+  currentUser: User = this.auth.getCurrentUser();
   constructor(private auth: AuthService) { }
   
  
   ngOnInit(): void {
-    this.enteredEmail = this.auth.email;
+    this.enteredEmail = this.auth.getCurrentUser().email;
   console.log(this.enteredEmail)
   this.form = new FormGroup({
     name: new FormControl(null,[Validators.required, Validators.minLength(5)]),
@@ -29,11 +29,11 @@ export class ProfileComponent implements OnInit {
 
   }
   onSubmit(){
-    CURRENT_USER.username = this.form.get('name')?.value;
-    CURRENT_USER.age = this.form.get('age')?.value;
+    this.currentUser.userName = this.form.get('name')?.value;
+    this.currentUser.age = this.form.get('age')?.value;
 
-    console.log(CURRENT_USER.username);
-    console.log(CURRENT_USER.age);
-    console.log(CURRENT_USER);
+    console.log(this.currentUser.userName);
+    console.log(this.currentUser.age);
+    console.log(this.currentUser);
   }
 }

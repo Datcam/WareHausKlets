@@ -1,8 +1,11 @@
 <section class="section games">
   <div class="container">
     <h2 class="section_title">Games</h2>
-    <form class="search-from" (submit)="searchGames($event)">
-      <input class="search_input" type="search" name="search" placeholder="Search games">
+    <form class="search-form" (submit)="searchGames($event)">
+      <label class="search-form_label">
+        <span class="search_label">Search games</span>
+        <input class="search_input" type="search" name="search" placeholder="Search games">
+      </label>
       <button class="btn" type="submit">Search</button>
     </form>
     <h3 class="section_title">Featured Games</h3>
@@ -15,15 +18,18 @@
             <h4 class="card_price">{{game.price}} UAH</h4>
           </div>
           <p class="card_text">{{game.description}}</p>
-          <button class="card_btn">Add to Library</button>
+          <button class="card_btn" [class.card_btn__disabled]="!isAuth" [disabled]="!isAuth">Add to Library</button>
         </div>
+        <h2 *ngIf="!filteredData.length">Game not found!</h2>
       </div>
       <div class="sidebar">
         <form (submit)="filterGames($event)">
           <h4>Filter by price</h4>
-          {{minPrice}}&#8372;
-          <input class="price_range" name="price" type="range" step="10" [min]="minPrice" [max]="maxPrice">
-          {{maxPrice}}&#8372;
+          <div class="range-slider-wrap">
+            {{minPrice}}&#8372;
+            <input class="price_range" name="price" type="range" step="10" [min]="minPrice" [max]="maxPrice">
+            {{maxPrice}}&#8372;
+          </div>
           <h4>Filter by tags</h4>
           <div class="tags">
             <label *ngFor="let tag of tags">
