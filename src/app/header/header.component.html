@@ -1,10 +1,17 @@
-<div class="header">
-  <img src="../../assets/steam-logo.svg" alt="steam-logo" class="logo">
-  <nav class="navigation">
-    <a routerLink="/games" (click)="addClass($event)">Games</a>
-    <a routerLink="/library" (click)="addClass($event)">Library</a>
-    <a routerLink="/friends" (click)="addClass($event)">Friends</a>
-    <a routerLink="/profile" (click)="addClass($event)">Profile</a>
-  </nav>
+<div class="header-container">
+  <img src="../../assets/steam-logo.svg" alt="steam-logo" class="logo" routerLink="/games">
+  <div class="header" *ngIf="!isAuth">
+    <p>Welcome to Steam!</p>
+    <button class="login-btn" (click)="logIn()">LogIn</button>
+  </div>
+  <div class="header" *ngIf="isAuth">
+    <nav class="navigation">
+      <a routerLink="/games" (click)="addClass($event)">Games</a>
+      <a routerLink="/library" (click)="addClass($event)">Library</a>
+      <a routerLink="/friends" (click)="addClass($event)">Friends</a>
+      <a routerLink="/profile" (click)="addClass($event)">Profile</a>
+    </nav>
+    <button class="logout-btn" (click)="logOut()">LogOut</button>
+  </div>
 </div>
 
