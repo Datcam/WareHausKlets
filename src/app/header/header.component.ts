@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit, DoCheck {
 
+  profile: boolean = true;
+  games: boolean = false;
   previousTarget: any;
   isAuth!: boolean;
 
@@ -26,8 +28,18 @@ export class HeaderComponent implements OnInit, DoCheck {
     if (this.previousTarget) {
       this.previousTarget.className = ''
     }
+    this.profile = false;
+    this.games = false;
     this.previousTarget = event.target;
     event.target.className = 'active';
+  }
+
+  goToGamesPage() {
+    if (this.previousTarget) {
+      this.previousTarget.className = ''
+    }
+    this.profile = false;
+    this.games = true;
   }
 
   logIn() {
@@ -37,6 +49,8 @@ export class HeaderComponent implements OnInit, DoCheck {
   logOut() {
     this.router.navigate(['games']);
     this.auth.logOut()
+    this.profile = true;
+    this.games = false;
   }
 
 }
