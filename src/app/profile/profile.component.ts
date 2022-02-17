@@ -1,6 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginComponent } from '../login/login.component';
+import { CURRENT_USER } from '../mock-friends-data';
 import { AuthService } from '../services/auth.service';
 
 
@@ -17,9 +18,7 @@ export class ProfileComponent implements OnInit {
   enteredEmail! : string
   constructor(private auth: AuthService) { }
   
-  ngAfterContetnChecked(){
-    
-  }
+ 
   ngOnInit(): void {
     this.enteredEmail = this.auth.email;
   console.log(this.enteredEmail)
@@ -30,6 +29,11 @@ export class ProfileComponent implements OnInit {
 
   }
   onSubmit(){
+    CURRENT_USER.username = this.form.get('name')?.value;
+    CURRENT_USER.age = this.form.get('age')?.value;
 
+    console.log(CURRENT_USER.username);
+    console.log(CURRENT_USER.age);
+    console.log(CURRENT_USER);
   }
 }

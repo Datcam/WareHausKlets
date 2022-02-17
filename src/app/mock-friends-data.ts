@@ -1,5 +1,7 @@
 export const CURRENT_USER = {
   id: 1,
+  username :'',
+  age : 0,
   friends: [
     {
       id: 1,
