@@ -4,6 +4,14 @@ export class AuthService {
 
   currentUser!: User;
   isLoggedIn = false;
+  email!: string
+  
+  getEmail(){
+    return this.email
+  }
+  setEmail(email:string){
+    this.email = email
+  }
 
   setCurrentUser(user: User) {
     this.currentUser = user;
@@ -14,6 +22,7 @@ export class AuthService {
   }
 
   isAuth() {
+
     return this.isLoggedIn
   }
 

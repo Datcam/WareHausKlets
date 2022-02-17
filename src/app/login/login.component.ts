@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../services/auth.service';
 import { Router } from '@angular/router';
@@ -11,9 +10,11 @@ import { User } from '../models/user.model';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+@Injectable()
+
 export class LoginComponent implements OnInit {
 
-  form!: FormGroup //= new FormGroup({
+  public form!: FormGroup //= new FormGroup({
     // })
     arr: User[] = USERS;
     check!:boolean
@@ -33,19 +34,22 @@ export class LoginComponent implements OnInit {
         this.check = true;
         this.noncheck = false;
         console.log(this.check);
+        this.auth.setEmail(this.form.get('email')?.value);
 
         this.auth.setCurrentUser(value);
         this.auth.logIn()
         this.router.navigate(['profile']);
-        return;
+        
       }
-      else {this.check = false;
-        console.log(this.check);}
+      else {
+        console.log(this.check);
         this.noncheck = true;
+      }
       })
+     
     console.log(this.form.get('email')?.value);
     console.log(this.form.get('password')?.value);
-
+    // return this.form;  
     // fetch("https://620ad5cc92946600171c5caa.mockapi.io/users",).then((response)=>response.json())
     // .then((data)=>console.log(data));
   }
