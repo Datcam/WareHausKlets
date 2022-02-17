@@ -1,1 +1,54 @@
-<p>profile works!</p>
+<body> <form 
+    class="card" 
+    
+    [formGroup] = "form"
+    (ngSubmit)="onSubmit()"
+    >
+        <div class="card-content">
+            <h2 class="card-title"> 
+                Profile </h2>
+           <div class="input-field">
+               <label for="text">Username:</label><br>
+                
+               <input 
+               placeholder ="Name"
+
+               formControlName = "name"
+               id="name" 
+               type="text"
+                ><br>
+               
+           </div> 
+           <div class="input-field">
+               <label for="email">Email:</label><br>
+               <input 
+                placeholder ="Email"
+               id="email" 
+               [value]="enteredEmail"
+               type="email"
+               ><br>
+              
+           </div>
+           <div class="input-field">
+            <label for="age">Age:</label><br>
+            <input 
+            placeholder ="Age"
+            formControlName = "age"
+            id="age" 
+            type="number"
+             ><br>
+           
+        </div>
+        </div>
+        <div class="card-action"><br>
+            <button 
+            type="submit"
+            class="modal-action"
+            
+            >Save</button>
+            <!-- [disabled]="form.invalid" -->
+            <br>
+            
+        </div>
+    </form>
+   </body>
