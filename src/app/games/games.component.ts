@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GAMES } from './../mock-data';
 import { Game } from '../models/game.model';
+import { AuthService } from './../services/auth.service';
 
 @Component({
   selector: 'app-games',
@@ -16,6 +17,12 @@ export class GamesComponent implements OnInit {
   priceLimit = 0;
   filterTags: string[] = [];
   searchValue = '';
+  isAuth!: boolean;
+
+  constructor(private auth: AuthService) { }
+  ngDoCheck(): void {
+    this.isAuth = this.auth.isAuth() //if true - button will work
+  }
 
   ngOnInit(): void {
     this.setFilteredData(this.data);
@@ -25,7 +32,7 @@ export class GamesComponent implements OnInit {
   }
 
   mapTags(): void {
-    this.tags = this.data.map((game) => game.genre);
+    this.tags = [...new Set(this.data.map((game) => game.genre))];
   }
 
   setMaxPrice(): void {
