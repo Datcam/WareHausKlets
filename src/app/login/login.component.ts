@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
         this.check = true;
         this.noncheck = false;
         console.log(this.check);
-        this.auth.setEmail(this.form.get('email')?.value);
 
         this.auth.setCurrentUser(value);
         this.auth.logIn()
