@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms'; 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../services/auth.service';
 import { Router } from '@angular/router';
