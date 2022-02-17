@@ -1,5 +1,17 @@
+import { User } from "../models/user.model";
+
 export class AuthService {
+
+  currentUser!: User;
   isLoggedIn = false;
+
+  setCurrentUser(user: User) {
+    this.currentUser = user;
+  }
+
+  getCurrentUser() {
+    return this.currentUser
+  }
 
   isAuth() {
     return this.isLoggedIn

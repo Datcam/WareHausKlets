@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './../services/auth.service';
 import { Router } from '@angular/router';
+import { USERS } from './../mock-data';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   form!: FormGroup //= new FormGroup({
     // })
-    arr = [{ id: 1, email:"yarmannagibator@gmail.com", password:"toothpaste"},{id:2, email:"mmarkiv0413@outlook.com", password:"123456"}]
+    arr: User[] = USERS;
     check!:boolean
     noncheck:boolean = false
 
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
         this.noncheck = false;
         console.log(this.check);
 
+        this.auth.setCurrentUser(value);
         this.auth.logIn()
         this.router.navigate(['profile']);
         return;
