@@ -14,11 +14,10 @@ import { User } from '../models/user.model';
 
 export class LoginComponent implements OnInit {
 
-  public form!: FormGroup //= new FormGroup({
-    // })
-    arr: User[] = USERS;
-    check!:boolean
-    noncheck:boolean = false
+  public form!: FormGroup
+  arr: User[] = USERS;
+  check!:boolean
+  noncheck:boolean = false
 
   constructor(private auth: AuthService, private router: Router) {}
 
@@ -33,7 +32,6 @@ export class LoginComponent implements OnInit {
       if(this.form.get('email')?.value === value.email && this.form.get('password')?.value === value.password){
         this.check = true;
         this.noncheck = false;
-        console.log(this.check);
 
         this.auth.setCurrentUser(value);
         this.auth.logIn()
@@ -41,16 +39,9 @@ export class LoginComponent implements OnInit {
         
       }
       else {
-        console.log(this.check);
         this.noncheck = true;
       }
       })
-     
-    console.log(this.form.get('email')?.value);
-    console.log(this.form.get('password')?.value);
-    // return this.form;  
-    // fetch("https://620ad5cc92946600171c5caa.mockapi.io/users",).then((response)=>response.json())
-    // .then((data)=>console.log(data));
   }
 
 }
