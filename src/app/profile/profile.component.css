@@ -37,3 +37,5 @@ button{
 
     margin-top: -20px;
 }
+button:hover{ background-color: #a19ffc;
+transition: 0.3s;}
