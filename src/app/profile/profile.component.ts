@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit {
   enteredEmail! : string
   currentUser: User = this.auth.getCurrentUser();
   constructor(private auth: AuthService) { }
-  
  
   ngOnInit(): void {
     this.enteredEmail = this.auth.getCurrentUser().email;
@@ -35,5 +34,10 @@ export class ProfileComponent implements OnInit {
     console.log(this.currentUser.userName);
     console.log(this.currentUser.age);
     console.log(this.currentUser);
+  }
+  onEdit(){
+    this.currentUser.userName = '';
+    this.currentUser.age = 0;
+
   }
 }
