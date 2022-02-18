@@ -23,7 +23,44 @@ export const USERS: User[] = [
         name: 'Vitaliy'
       }
     ],
-    games: []
+    games: [
+      {
+        id: 1,
+        name: 'Doom Ethernal',
+        price: 200,
+        genre: 'Action',
+        img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
+        description:
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
+      },
+      {
+        id: 2,
+        name: 'SimCity',
+        price: 120,
+        genre: 'Simulator',
+        img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
+        description:
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
+      },
+      {
+        id: 3,
+        name: 'Diablo 2',
+        price: 300,
+        genre: 'RPG',
+        img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
+        description:
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
+      },
+      {
+        id: 4,
+        name: 'Age of Empires 3',
+        price: 225,
+        genre: 'Strategy',
+        img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
+        description:
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
+      },
+    ]
   },
   {
     id: 1,
@@ -45,7 +82,44 @@ export const USERS: User[] = [
         name: 'Katia',
       }
     ],
-    games: []
+    games: [
+      {
+        id: 1,
+        name: 'Doom Ethernal',
+        price: 200,
+        genre: 'Action',
+        img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
+        description:
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
+      },
+      {
+        id: 2,
+        name: 'SimCity',
+        price: 120,
+        genre: 'Simulator',
+        img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
+        description:
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
+      },
+      {
+        id: 3,
+        name: 'Diablo 2',
+        price: 300,
+        genre: 'RPG',
+        img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
+        description:
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
+      },
+      {
+        id: 4,
+        name: 'Age of Empires 3',
+        price: 225,
+        genre: 'Strategy',
+        img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
+        description:
+          'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
+      },
+    ]
   },
 ]
 
@@ -80,7 +154,7 @@ export const GAMES: Game[] = [
     genre: 'Action',
     img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta! Vero dicta tempora laudantium molestiae illum?',
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
   },
   {
     id: 2,
@@ -89,7 +163,7 @@ export const GAMES: Game[] = [
     genre: 'Simulator',
     img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta! Vero dicta tempora laudantium molestiae illum?',
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
   },
   {
     id: 3,
@@ -98,7 +172,7 @@ export const GAMES: Game[] = [
     genre: 'RPG',
     img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta! Vero dicta tempora laudantium molestiae illum?',
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
   },
   {
     id: 4,
@@ -107,7 +181,7 @@ export const GAMES: Game[] = [
     genre: 'Strategy',
     img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta! Vero dicta tempora laudantium molestiae illum?',
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
   },
   {
     id: 5,
@@ -116,7 +190,7 @@ export const GAMES: Game[] = [
     genre: 'Action',
     img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta! Vero dicta tempora laudantium molestiae illum?',
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
   },
   {
     id: 6,
@@ -125,6 +199,6 @@ export const GAMES: Game[] = [
     genre: 'Simulator',
     img: 'https://dummyimage.com/300x150/bdbcff/bdbcff',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta! Vero dicta tempora laudantium molestiae illum?',
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, omnis libero? Molestias, laboriosam nobis? Quae harum nemo aut nesciunt distinctio aliquid provident praesentium accusamus quis possimus at iure vitae vero amet sunt quidem impedit consequuntur error ea, nihil soluta!',
   },
 ]

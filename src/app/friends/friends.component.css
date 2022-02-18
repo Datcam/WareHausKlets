@@ -93,6 +93,7 @@ input {
 .back-btn,
 .add-btn {
   transition: 0.3s linear;
+  cursor: pointer;
 }
 
 .search-btn:hover,
