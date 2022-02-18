@@ -29,6 +29,7 @@
   border-radius: 4px;
   border: inherit;
   color: #fff;
+  cursor: pointer;
 }
 
 .header .login-btn {

@@ -20,8 +20,7 @@ export class ProfileComponent implements OnInit {
  
   ngOnInit(): void {
     this.enteredEmail = this.auth.getCurrentUser().email;
-  console.log(this.enteredEmail)
-  this.form = new FormGroup({
+    this.form = new FormGroup({
     name: new FormControl(null,[Validators.required, Validators.minLength(5)]),
     
     age:new FormControl(null,[Validators.required])})
@@ -30,14 +29,10 @@ export class ProfileComponent implements OnInit {
   onSubmit(){
     this.currentUser.userName = this.form.get('name')?.value;
     this.currentUser.age = this.form.get('age')?.value;
-
-    console.log(this.currentUser.userName);
-    console.log(this.currentUser.age);
-    console.log(this.currentUser);
   }
+
   onEdit(){
     this.currentUser.userName = '';
     this.currentUser.age = 0;
-
   }
 }

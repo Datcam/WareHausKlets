@@ -16,7 +16,6 @@ export class FriendsComponent implements OnInit {
   searchResult!: Friend[];
   showSearchResult: boolean = false;
   searchValue: string = '';
-  noResults: boolean = false;
 
   constructor(private auth: AuthService) {}
 
@@ -24,17 +23,12 @@ export class FriendsComponent implements OnInit {
   }
 
   searchFriends() {
-    this.noResults = false;
     if (!this.showSearchResult) {
       this.showSearchResult = !this.showSearchResult;
     }
     this.searchResult = this.availableFriends.filter(friend => {
       return friend.name.includes(this.searchValue)
     });
-
-    if (this.searchResult.length === 0) {
-      this.noResults = true
-    }
   }
 
   removeFriend(removedFriend: Friend) {
@@ -43,12 +37,8 @@ export class FriendsComponent implements OnInit {
         arr.splice(idx, 1)
       }
     })
-    const lastFriendItem = this.availableFriends[this.availableFriends.length - 1]
-    const friend = {
-      id: lastFriendItem?.id ? lastFriendItem.id + 1 : 0,
-      name: removedFriend.name
-    }
-    this.availableFriends.push(friend)
+
+    this.availableFriends.push(removedFriend)
   }
 
   addFriend(addedFriend: Friend) {
@@ -64,12 +54,7 @@ export class FriendsComponent implements OnInit {
       }
     })
 
-    const lastFriendItem = this.userFriendList[this.userFriendList.length - 1]
-    const friend = {
-      id: lastFriendItem?.id ? lastFriendItem.id + 1 : 0,
-      name: addedFriend.name
-    }
-    this.userFriendList.push(friend)
+    this.userFriendList.push(addedFriend)
   }
 
   backToFriends() {

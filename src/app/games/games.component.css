@@ -98,6 +98,8 @@
 }
 
 .card_text {
+  font-size: 13px;
+  line-height: 15px;
   margin: 10px 0;
 }
 

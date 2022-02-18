@@ -28,10 +28,14 @@ export class HeaderComponent implements OnInit, DoCheck {
     if (this.previousTarget) {
       this.previousTarget.className = ''
     }
+    if (event === 'games') {
+      this.games = true;
+    } else {
+      this.games = false;
+      event.target.className = 'active';
+    }
     this.profile = false;
-    this.games = false;
     this.previousTarget = event.target;
-    event.target.className = 'active';
   }
 
   goToGamesPage() {
