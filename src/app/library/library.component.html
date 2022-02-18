@@ -11,6 +11,6 @@
         <button class="share-btn"(click)="showMessage('You successfully shared the game!')">Share</button>
       </div>
     </div>
-    <h2 *ngIf="!userGames.length">Game not found!</h2>
   </div>
+  <h2 class="message" *ngIf="!userGames.length">You don't have any games yet...</h2>
 </div>

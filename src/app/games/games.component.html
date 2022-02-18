@@ -18,7 +18,7 @@
             <h4 class="card_price">{{game.price}} UAH</h4>
           </div>
           <p class="card_text">{{game.description}}</p>
-          <button class="card_btn" [class.card_btn__disabled]="!isAuth" [disabled]="!isAuth">Add to Library</button>
+          <button class="card_btn" [class.card_btn__disabled]="!isAuth" [disabled]="!isAuth" (click)="addToLibrary(game)">Add to Library</button>
         </div>
         <h2 *ngIf="!filteredData.length">Game not found!</h2>
       </div>

@@ -18,10 +18,14 @@ export class GamesComponent implements OnInit {
   filterTags: string[] = [];
   searchValue = '';
   isAuth!: boolean;
+  userGames!: Game[];
 
   constructor(private auth: AuthService) { }
   ngDoCheck(): void {
     this.isAuth = this.auth.isAuth() //if true - button will work
+    if (this.isAuth) {
+      this.userGames = this.auth.getCurrentUser().games
+    }
   }
 
   ngOnInit(): void {
@@ -90,5 +94,15 @@ export class GamesComponent implements OnInit {
         (this.filterTags.length ? this.filterTags.includes(game.genre) : true)
       );
     });
+  }
+
+  addToLibrary(addedGame: Game) {
+    this.userGames.push(addedGame)
+
+    this.data.map((game, idx, arr) => {
+      if (game.id === addedGame.id) {
+        arr.splice(idx, 1)
+      }
+    })
   }
 }

@@ -45,6 +45,11 @@ input {
   color: #fff;
 }
 
+.message {
+  font-weight: normal;
+  font-size: 18px;
+}
+
 .friend-item {
   display: flex;
   justify-content: space-between;

@@ -9,6 +9,7 @@
   </div>
   <div class="friends" *ngIf="!showSearchResult">
     <h2 class="title">My Friends</h2>
+    <h2 class="message" *ngIf="!userFriendList.length">You don't have any friends yet...</h2>
     <div class="friend-item" *ngFor="let friend of userFriendList">
       <p>{{ friend.name }}</p>
       <button class="remove-btn" (click)="removeFriend(friend)">Remove Friend</button>
@@ -22,7 +23,7 @@
       <button class="add-btn" (click)="addFriend(friend)">Add Friend</button>
     </div>
     <div class="back-btn-container">
-      <p *ngIf="noResults">No Results</p>
+      <p *ngIf="!searchResult.length">No Results</p>
       <button class="back-btn" (click)="backToFriends()">Back to my friends</button>
     </div>
   </div>
