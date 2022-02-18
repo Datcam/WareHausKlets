@@ -1,10 +1,37 @@
-<body> <form 
+<body>
+     <form 
     class="card" 
     
     [formGroup] = "form"
     (ngSubmit)="onSubmit()"
     >
-        <div class="card-content">
+    <div
+    class = "profile"
+    (ngSubmit)="onEdit()"
+    *ngIf="this.currentUser.userName&&this.currentUser.age"
+    >
+    <h2 class="card-title"> 
+        Profile </h2>
+        <label> Username:</label><br>
+        <span><b>{{this.currentUser.userName}}</b></span><br>
+        <label > Email:</label><br>
+        <span><b>{{this.currentUser.email}}</b></span>
+
+        <label> Age:</label><br>
+        <span><b>{{this.currentUser.age}}</b></span>
+        <div class="card-action"><br>
+            <button 
+            type="submit"
+            class="modal-action"
+            
+            >Edit</button>
+            <!-- [disabled]="form.invalid" -->
+            <br>
+        </div>
+    </div>
+        <div class="card-content"
+        *ngIf="!this.currentUser.userName||!this.currentUser.age"
+        >
             <h2 class="card-title"> 
                 Profile </h2>
            <div class="input-field">
@@ -39,7 +66,6 @@
              ><br>
            
         </div>
-        </div>
         <div class="card-action"><br>
             <button 
             type="submit"
@@ -50,5 +76,9 @@
             <br>
             
         </div>
-    </form>
+        </div>
+       
+    </form>    
+
+
    </body>
