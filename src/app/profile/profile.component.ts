@@ -2,6 +2,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../models/user.model';
 import { AuthService } from '../services/auth.service';
+import { NotificationService } from '../services/notification.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
   form!: FormGroup
   enteredEmail! : string
   currentUser: User = this.auth.getCurrentUser();
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private notification: NotificationService) { }
  
   ngOnInit(): void {
     this.enteredEmail = this.auth.getCurrentUser().email;
@@ -29,6 +30,7 @@ export class ProfileComponent implements OnInit {
   onSubmit(){
     this.currentUser.userName = this.form.get('name')?.value;
     this.currentUser.age = this.form.get('age')?.value;
+    this.notification.showMessage('Your data was successfully saved!')
   }
 
   onEdit(){

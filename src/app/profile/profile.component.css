@@ -9,7 +9,7 @@
     background-color: white;
     height: 340px;
     max-width: 320px;
-    margin: 100px auto;
+    margin: 0 auto;
     border-radius: 4px;
     padding: 60px;
     display: flex;
@@ -39,3 +39,10 @@ button{
 }
 button:hover{ background-color: #a19ffc;
 transition: 0.3s;}
+
+.container {
+    max-width: 100%;
+    min-height: 100%;
+    background: #E5E5E5;
+    box-shadow: none;
+}

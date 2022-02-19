@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../services/auth.service';
 import { FRIENDS } from '../mock-data';
 import { Friend } from '../models/friend.model';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-friends',
@@ -17,7 +18,7 @@ export class FriendsComponent implements OnInit {
   showSearchResult: boolean = false;
   searchValue: string = '';
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private notification: NotificationService) {}
 
   ngOnInit(): void {
   }
@@ -39,6 +40,7 @@ export class FriendsComponent implements OnInit {
     })
 
     this.availableFriends.push(removedFriend)
+    this.notification.showMessage(`Friend ${removedFriend.name} was successfully removed!`)
   }
 
   addFriend(addedFriend: Friend) {
@@ -55,6 +57,7 @@ export class FriendsComponent implements OnInit {
     })
 
     this.userFriendList.push(addedFriend)
+    this.notification.showMessage(`Friend ${addedFriend.name} was successfully added!`)
   }
 
   backToFriends() {
