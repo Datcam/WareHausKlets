@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from '../models/game.model';
 import { AuthService } from '../services/auth.service';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-library',
@@ -8,23 +10,19 @@ import { AuthService } from '../services/auth.service';
 })
 export class LibraryComponent implements OnInit {
 
-  userGames = this.auth.getCurrentUser().games;
-  visible: boolean = false;
-  messageText!: string;
+  userGames: Game[] = this.auth.getCurrentUser().games;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private notification: NotificationService) { }
 
   ngOnInit(): void {
   }
 
-  showMessage(text: string) {
-    this.messageText = text;
-    this.visible = true;
-    setTimeout(() => this.hideMessage(), 2000)
+  download() {
+    this.notification.showMessage('Download successfully started!')
   }
 
-  private hideMessage() {
-    this.visible = false;
+  share() {
+    this.notification.showMessage('You successfully shared the game!')
   }
 
 }

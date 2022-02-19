@@ -10,6 +10,8 @@ import { LibraryComponent } from './library/library.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationService } from './services/notification.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 
@@ -21,7 +23,8 @@ import { AuthGuard } from './services/auth-guard.service';
     LibraryComponent,
     FriendsComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { AuthGuard } from './services/auth-guard.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="message-block" [ngClass]="visible ? 'visible': ''"> {{ messageText }} </div>
+  <app-notification></app-notification>
   <h2 class="title">My Games</h2>
   <div class="cards-container">
     <div class="card" *ngFor="let game of userGames">
@@ -7,8 +7,8 @@
       <h4 class="card-title">{{ game.name }}</h4>
       <p class="card-description">{{ game.description }}</p>
       <div class="btn-container">
-        <button class="download-btn" (click)="showMessage('Download successfully started!')">Download</button>
-        <button class="share-btn"(click)="showMessage('You successfully shared the game!')">Share</button>
+        <button class="download-btn" (click)="download()">Download</button>
+        <button class="share-btn"(click)="share()">Share</button>
       </div>
     </div>
   </div>

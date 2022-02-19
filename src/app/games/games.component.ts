@@ -1,3 +1,4 @@
+import { NotificationService } from './../services/notification.service';
 import { Component, OnInit } from '@angular/core';
 import { GAMES } from './../mock-data';
 import { Game } from '../models/game.model';
@@ -20,7 +21,7 @@ export class GamesComponent implements OnInit {
   isAuth!: boolean;
   userGames!: Game[];
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private notification: NotificationService) { }
   ngDoCheck(): void {
     this.isAuth = this.auth.isAuth() //if true - button will work
     if (this.isAuth) {
@@ -104,5 +105,7 @@ export class GamesComponent implements OnInit {
         arr.splice(idx, 1)
       }
     })
+
+    this.notification.showMessage(`Game ${addedGame.name} was successfully added!`)
   }
 }
