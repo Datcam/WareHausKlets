@@ -1,8 +1,10 @@
+import { GAMES } from './../../shared/mock-data';
 import { NotificationService } from '../../services/notification.service';
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { GAMES } from '../../shared/mock-data';
 import { Game } from '../../shared/models/game.model';
 import { AuthService } from '../../services/auth.service';
+import { User } from 'src/app/shared/models/user.model';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-games-app',
@@ -13,39 +15,40 @@ export class GamesPageComponent implements OnInit, DoCheck {
   tags: string[] = [];
   maxPrice = 0;
   minPrice = 0;
-  data: Game[] = GAMES;
+  games: Game[] = this.data.getGamesData() || GAMES;
   filteredData: Game[] = [];
   priceLimit = 0;
   filterTags: string[] = [];
   searchValue = '';
   isAuth!: boolean;
   userGames!: Game[];
+  currentUser: User = this.data.getCurrentUser();
 
-  constructor(private auth: AuthService, private notification: NotificationService) { }
+  constructor(private auth: AuthService, private notification: NotificationService, private data: DataService) { }
   ngDoCheck(): void {
     this.isAuth = this.auth.isAuth() //if true - button will work
     if (this.isAuth) {
-      this.userGames = this.auth.getCurrentUser().games
+      this.userGames = this.currentUser.games
     }
   }
 
   ngOnInit(): void {
-    this.setFilteredData(this.data);
+    this.setFilteredData(this.games);
     this.mapTags();
     this.setMaxPrice();
     this.setMinPrice();
   }
 
   mapTags(): void {
-    this.tags = [...new Set(this.data.map((game) => game.genre))];
+    this.tags = [...new Set(this.games.map((game) => game.genre))];
   }
 
   setMaxPrice(): void {
-    this.maxPrice = Math.max(...this.data.map((game) => game.price));
+    this.maxPrice = Math.max(...this.games.map((game) => game.price));
   }
 
   setMinPrice(): void {
-    this.minPrice = Math.min(...this.data.map((game) => game.price));
+    this.minPrice = Math.min(...this.games.map((game) => game.price));
   }
 
   setFilteredData(filteredData: Game[]) {
@@ -61,7 +64,7 @@ export class GamesPageComponent implements OnInit, DoCheck {
       .filter((input: any) => input.checked)
       .map((input: any) => input.value);
 
-    let games = this.data;
+    let games = this.games;
     if (this.searchValue) {
       games = this.search(games);
     }
@@ -75,7 +78,7 @@ export class GamesPageComponent implements OnInit, DoCheck {
 
     this.searchValue = event.target.search.value.trim().toLowerCase();
 
-    let games = this.data;
+    let games = this.games;
     if (this.priceLimit || this.filterTags.length) {
       games = this.filter(games);
     }
@@ -98,14 +101,16 @@ export class GamesPageComponent implements OnInit, DoCheck {
   }
 
   addToLibrary(addedGame: Game) {
-    this.userGames.push(addedGame)
+    this.userGames.push(addedGame);
 
-    this.data.map((game, idx, arr) => {
+    this.games.map((game, idx, arr) => {
       if (game.id === addedGame.id) {
-        arr.splice(idx, 1)
+        arr.splice(idx, 1);
       }
     })
 
-    this.notification.showMessage(`Game ${addedGame.name} was successfully added!`)
+    this.data.saveUserData(this.currentUser);
+    this.data.saveGamesData(this.games);
+    this.notification.showMessage(`Game ${addedGame.name} was successfully added!`);
   }
 }
