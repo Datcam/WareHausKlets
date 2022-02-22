@@ -13,6 +13,7 @@ import { DataService } from 'src/app/services/data.service';
 
 export class ProfilePageComponent implements OnInit {
 
+  MIN_NAME_LENGTH: number = 5;
   form!: FormGroup;
   enteredEmail!: string;
   currentUser: User = this.data.getCurrentUser();
@@ -21,7 +22,7 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit(): void {
     this.enteredEmail = this.currentUser.email;
     this.form = new FormGroup({
-      name: new FormControl(null, [Validators.required, Validators.minLength(5)]),
+      name: new FormControl(null, [Validators.required, Validators.minLength(this.MIN_NAME_LENGTH)]),
       age: new FormControl(null, [Validators.required])
     });
   }

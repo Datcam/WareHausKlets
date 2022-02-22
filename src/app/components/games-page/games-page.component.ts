@@ -29,7 +29,7 @@ export class GamesPageComponent implements OnInit, DoCheck {
   ngDoCheck(): void {
     this.isAuth = this.auth.isAuth();
     if (this.isAuth) {
-      this.userGames = this.currentUser.games
+      this.userGames = this.currentUser.games;
     }
   }
 
@@ -53,7 +53,7 @@ export class GamesPageComponent implements OnInit, DoCheck {
   }
 
   setCurrentPrice(event: any): void {
-    this.currentPrice = Number(event.target.value)
+    this.currentPrice = Number(event.target.value);
   }
 
   setFilteredData(filteredData: Game[]) {
@@ -94,7 +94,7 @@ export class GamesPageComponent implements OnInit, DoCheck {
 
   search(games: Game[]) {
     if (!this.searchValue) {
-      return []
+      return [];
     }
     return games.filter((game) => game.name.toLowerCase().includes(this.searchValue));
   }

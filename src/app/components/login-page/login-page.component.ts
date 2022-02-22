@@ -13,6 +13,7 @@ import { User } from '../../shared/models/user.model';
 
 export class LoginPageComponent implements OnInit {
 
+  MIN_PASSWORD_LENGTH: number = 5;
   public form!: FormGroup;
   arr: User[] = USERS;
   check!: boolean;
@@ -23,7 +24,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+      password: new FormControl(null, [Validators.required, Validators.minLength(this.MIN_PASSWORD_LENGTH)])
     });
   }
   

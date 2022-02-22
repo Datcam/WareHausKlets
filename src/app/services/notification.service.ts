@@ -1,5 +1,6 @@
 export class NotificationService {
 
+  NOTIFICATION_DURATION_TIME: number = 2000;
   messageText!: string;
   visible!: boolean;
   hideMessageTimeout!: any;
@@ -12,6 +13,6 @@ export class NotificationService {
   }
 
   private hideMessage() {
-    this.hideMessageTimeout = setTimeout(() => this.visible = false, 2000);
+    this.hideMessageTimeout = setTimeout(() => this.visible = false, this.NOTIFICATION_DURATION_TIME);
   }
 }
