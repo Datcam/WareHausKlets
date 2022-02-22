@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Game } from '../../shared/models/game.model';
-import { AuthService } from '../../services/auth.service';
 import { NotificationService } from '../../services/notification.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-library-page',
@@ -10,16 +10,15 @@ import { NotificationService } from '../../services/notification.service';
 })
 export class LibraryPageComponent {
 
-  userGames: Game[] = this.auth.getCurrentUser().games;
+  userGames: Game[] = this.data.getCurrentUser().games;
 
-  constructor(private auth: AuthService, private notification: NotificationService) { }
+  constructor(private data: DataService, private notification: NotificationService) { }
 
   download() {
-    this.notification.showMessage('Download successfully started!')
+    this.notification.showMessage('Download successfully started!');
   }
 
   share() {
-    this.notification.showMessage('You successfully shared the game!')
+    this.notification.showMessage('You successfully shared the game!');
   }
-
 }

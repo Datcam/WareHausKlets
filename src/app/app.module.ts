@@ -12,6 +12,7 @@ import { ProfilePageComponent } from './components/profile-page/profile-page.com
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { NotificationService } from './services/notification.service';
+import { DataService } from 'src/app/services/data.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 
@@ -32,7 +33,12 @@ import { AuthGuard } from './services/auth-guard.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard, NotificationService],
+  providers: [
+    AuthService, 
+    AuthGuard, 
+    NotificationService,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
