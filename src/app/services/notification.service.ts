@@ -7,8 +7,8 @@ export class NotificationService {
   showMessage(text: string) {
     this.messageText = text;
     this.visible = true;
-    clearTimeout(this.hideMessageTimeout)
-    this.hideMessage()
+    clearTimeout(this.hideMessageTimeout);
+    this.hideMessage();
   }
 
   private hideMessage() {

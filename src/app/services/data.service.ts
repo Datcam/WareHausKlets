@@ -5,7 +5,7 @@ import { Game } from '../shared/models/game.model';
 export class DataService {
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user')!)
+    return JSON.parse(localStorage.getItem('user')!);
   }
 
   getGamesData() {
