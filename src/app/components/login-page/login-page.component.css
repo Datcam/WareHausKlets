@@ -1,40 +1,47 @@
-.red-text{
-    color: #FF6F6F;
-}
-.card-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;}
-.card{
-    background-color: white;
-    height: 340px;
-    max-width: 320px;
-    margin: 100px auto;
-    border-radius: 4px;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
+.red-text {
+  color: var(--accent-color);
 }
 
-input{
-    width: 200px;
-    height: 30px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: grey 1px solid;
+.card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-button{
-    color: white;
-    background-color: #6C69FF;
-    width: 200px;
-    height: 32px;
-    border-radius: 5px;
-    margin-top: -20px;
-    border: 0px;
+
+.card {
+  background-color: var(--additional-color);
+  height: 340px;
+  max-width: 320px;
+  margin: 100px auto;
+  border-radius: 4px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px var(--shadow-accent-color);
 }
-button:hover{ background-color: #a19ffc;
-    transition: 0.3s;}
+
+input {
+  width: 200px;
+  padding: 9px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+}
+
+button {
+  color: var(--additional-color);
+  background-color: var(--brand-color);
+  width: 200px;
+  height: 32px;
+  border-radius: 5px;
+  margin-top: -20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  transition: 0.3s;
+}

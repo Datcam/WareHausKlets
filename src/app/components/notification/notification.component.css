@@ -1,14 +1,14 @@
 .message-block {
   position: absolute;
   top: 30px;
-  left: calc(50% - 300px / 2);;
+  left: calc(50% - 300px / 2);
   width: 300px;
   font-size: 14px;
   text-align: center;
   padding: 13px;
-  background: #FFFFFF;
-  border: 2px solid rgb(5, 163, 55);
-  box-shadow: 0px 0px 6px rgb(5, 163, 55);
+  background: var(--additional-color);
+  border: 2px solid var(--notification-color);
+  box-shadow: 0px 0px 6px var(--notification-color);
   border-radius: 4px;
   transform: translateY(-700%);
   transition: transform 0.5s ease-in-out;

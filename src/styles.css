@@ -1,14 +1,27 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--main-font);
   margin: 0;
   padding: 0;
   border: none;
   outline: none;
-  background: #E5E5E5;
+  background: var(--background-color);
 }
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --main-font:'Roboto', sans-serif;
+  --brand-color:#6C69FF;
+  --accent-color:#FF6F6F;
+  --secondary-color:#000;
+  --additional-color: #FFF;
+  --hover-color: #a19ffc;
+  --background-color: #E5E5E5;
+  --inactive-color: #adadba;
+  --shadow-accent-color:rgba(0, 0, 0, 0.25);
+  --notification-color:rgb(5, 163, 55);
 }
 
 .container {
@@ -17,8 +30,8 @@ body {
   min-height: 780px;
   margin: 60px auto;
   padding: 20px 60px;
-  background-color: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: var(--additional-color);
+  box-shadow: 0px 4px 4px var(--shadow-accent-color);
   border-radius: 4px;
   position: relative;
 }
