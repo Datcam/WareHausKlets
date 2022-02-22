@@ -6,7 +6,7 @@ import { NotificationService } from '../../services/notification.service';
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css']
 })
-export class NotificationComponent implements OnInit, DoCheck {
+export class NotificationComponent implements DoCheck {
 
   visible: boolean = false;
   messageText!: string;
@@ -17,8 +17,4 @@ export class NotificationComponent implements OnInit, DoCheck {
     this.visible = this.notification.visible;
     this.messageText = this.notification.messageText;
   }
-
-  ngOnInit(): void {
-  }
-
 }

@@ -8,14 +8,11 @@ import { NotificationService } from '../../services/notification.service';
   templateUrl: './library-page.component.html',
   styleUrls: ['./library-page.component.css']
 })
-export class LibraryPageComponent implements OnInit {
+export class LibraryPageComponent {
 
   userGames: Game[] = this.auth.getCurrentUser().games;
 
   constructor(private auth: AuthService, private notification: NotificationService) { }
-
-  ngOnInit(): void {
-  }
 
   download() {
     this.notification.showMessage('Download successfully started!')

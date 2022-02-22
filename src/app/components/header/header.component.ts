@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, DoCheck {
+export class HeaderComponent implements DoCheck {
 
   profile: boolean = true;
   games: boolean = false;
@@ -18,10 +18,6 @@ export class HeaderComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     this.isAuth = this.auth.isAuth()
-  }
-  
-
-  ngOnInit(): void {
   }
 
   addClass(event: any) {

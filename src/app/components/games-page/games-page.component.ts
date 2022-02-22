@@ -1,5 +1,5 @@
 import { NotificationService } from '../../services/notification.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { GAMES } from '../../shared/mock-data';
 import { Game } from '../../shared/models/game.model';
 import { AuthService } from '../../services/auth.service';
@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './games-page.component.html',
   styleUrls: ['./games-page.component.css'],
 })
-export class GamesPageComponent implements OnInit {
+export class GamesPageComponent implements OnInit, DoCheck {
   tags: string[] = [];
   maxPrice = 0;
   minPrice = 0;

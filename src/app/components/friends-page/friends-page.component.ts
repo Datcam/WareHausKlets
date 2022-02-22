@@ -10,7 +10,7 @@ import { NotificationService } from '../../services/notification.service';
   styleUrls: ['./friends-page.component.css']
 })
 
-export class FriendsPageComponent implements OnInit {
+export class FriendsPageComponent {
 
   userFriendList: Friend[] = this.auth.getCurrentUser().friends;
   availableFriends: Friend[] = FRIENDS;
@@ -19,9 +19,6 @@ export class FriendsPageComponent implements OnInit {
   searchValue: string = '';
 
   constructor(private auth: AuthService, private notification: NotificationService) {}
-
-  ngOnInit(): void {
-  }
 
   searchFriends() {
     if (!this.showSearchResult) {
