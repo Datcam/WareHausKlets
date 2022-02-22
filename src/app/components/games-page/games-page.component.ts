@@ -15,6 +15,7 @@ export class GamesPageComponent implements OnInit, DoCheck {
   tags: string[] = [];
   maxPrice = 0;
   minPrice = 0;
+  currentPrice = 0;
   games: Game[] = this.data.getGamesData() || GAMES;
   filteredData: Game[] = [];
   priceLimit = 0;
@@ -26,7 +27,7 @@ export class GamesPageComponent implements OnInit, DoCheck {
 
   constructor(private auth: AuthService, private notification: NotificationService, private data: DataService) { }
   ngDoCheck(): void {
-    this.isAuth = this.auth.isAuth() //if true - button will work
+    this.isAuth = this.auth.isAuth();
     if (this.isAuth) {
       this.userGames = this.currentUser.games
     }
@@ -49,6 +50,10 @@ export class GamesPageComponent implements OnInit, DoCheck {
 
   setMinPrice(): void {
     this.minPrice = Math.min(...this.games.map((game) => game.price));
+  }
+
+  setCurrentPrice(event: any): void {
+    this.currentPrice = Number(event.target.value)
   }
 
   setFilteredData(filteredData: Game[]) {
@@ -88,6 +93,9 @@ export class GamesPageComponent implements OnInit, DoCheck {
   }
 
   search(games: Game[]) {
+    if (!this.searchValue) {
+      return []
+    }
     return games.filter((game) => game.name.toLowerCase().includes(this.searchValue));
   }
 
