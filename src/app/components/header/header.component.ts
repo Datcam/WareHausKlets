@@ -1,4 +1,4 @@
-import { AuthService } from './../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

@@ -1,18 +1,17 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from './../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { USERS } from './../mock-data';
-import { User } from '../models/user.model';
+import { USERS } from '../../shared/mock-data';
+import { User } from '../../shared/models/user.model';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-page',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.css']
 })
-@Injectable()
 
-export class LoginComponent implements OnInit {
+export class LoginPageComponent implements OnInit {
 
   public form!: FormGroup
   arr: User[] = USERS;

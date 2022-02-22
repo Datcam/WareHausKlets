@@ -1,15 +1,15 @@
-import { NotificationService } from './../services/notification.service';
+import { NotificationService } from '../../services/notification.service';
 import { Component, OnInit } from '@angular/core';
-import { GAMES } from './../mock-data';
-import { Game } from '../models/game.model';
-import { AuthService } from './../services/auth.service';
+import { GAMES } from '../../shared/mock-data';
+import { Game } from '../../shared/models/game.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-games',
-  templateUrl: './games.component.html',
-  styleUrls: ['./games.component.css'],
+  selector: 'app-games-app',
+  templateUrl: './games-page.component.html',
+  styleUrls: ['./games-page.component.css'],
 })
-export class GamesComponent implements OnInit {
+export class GamesPageComponent implements OnInit {
   tags: string[] = [];
   maxPrice = 0;
   minPrice = 0;

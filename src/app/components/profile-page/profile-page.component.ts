@@ -1,18 +1,17 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from '../models/user.model';
-import { AuthService } from '../services/auth.service';
-import { NotificationService } from '../services/notification.service';
+import { User } from '../../shared/models/user.model';
+import { AuthService } from '../../services/auth.service';
+import { NotificationService } from '../../services/notification.service';
 
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  selector: 'app-profile-page',
+  templateUrl: './profile-page.component.html',
+  styleUrls: ['./profile-page.component.css'],
 })
-@Injectable()
 
-export class ProfileComponent implements OnInit {
+export class ProfilePageComponent implements OnInit {
 
   form!: FormGroup
   enteredEmail! : string

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './../services/auth.service';
-import { FRIENDS } from '../mock-data';
-import { Friend } from '../models/friend.model';
-import { NotificationService } from '../services/notification.service';
+import { AuthService } from '../../services/auth.service';
+import { FRIENDS } from '../../shared/mock-data';
+import { Friend } from '../../shared/models/friend.model';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
-  selector: 'app-friends',
-  templateUrl: './friends.component.html',
-  styleUrls: ['./friends.component.css']
+  selector: 'app-friends-page',
+  templateUrl: './friends-page.component.html',
+  styleUrls: ['./friends-page.component.css']
 })
 
-export class FriendsComponent implements OnInit {
+export class FriendsPageComponent implements OnInit {
 
   userFriendList: Friend[] = this.auth.getCurrentUser().friends;
   availableFriends: Friend[] = FRIENDS;

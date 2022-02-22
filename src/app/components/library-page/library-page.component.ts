@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from '../models/game.model';
-import { AuthService } from '../services/auth.service';
-import { NotificationService } from '../services/notification.service';
+import { Game } from '../../shared/models/game.model';
+import { AuthService } from '../../services/auth.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
-  selector: 'app-library',
-  templateUrl: './library.component.html',
-  styleUrls: ['./library.component.css']
+  selector: 'app-library-page',
+  templateUrl: './library-page.component.html',
+  styleUrls: ['./library-page.component.css']
 })
-export class LibraryComponent implements OnInit {
+export class LibraryPageComponent implements OnInit {
 
   userGames: Game[] = this.auth.getCurrentUser().games;
 

@@ -4,13 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { GamesComponent } from './games/games.component';
-import { LibraryComponent } from './library/library.component';
-import { FriendsComponent } from './friends/friends.component';
-import { ProfileComponent } from './profile/profile.component';
-import { LoginComponent } from './login/login.component';
-import { NotificationComponent } from './notification/notification.component';
+import { HeaderComponent } from './components/header/header.component';
+import { GamesPageComponent } from './components/games-page/games-page.component';
+import { LibraryPageComponent } from './components/library-page/library-page.component';
+import { FriendsPageComponent } from './components/friends-page/friends-page.component';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { NotificationComponent } from './components/notification/notification.component';
 import { NotificationService } from './services/notification.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
@@ -19,11 +19,11 @@ import { AuthGuard } from './services/auth-guard.service';
   declarations: [
     AppComponent,
     HeaderComponent,
-    GamesComponent,
-    LibraryComponent,
-    FriendsComponent,
-    ProfileComponent,
-    LoginComponent,
+    GamesPageComponent,
+    LibraryPageComponent,
+    FriendsPageComponent,
+    ProfilePageComponent,
+    LoginPageComponent,
     NotificationComponent
   ],
   imports: [
