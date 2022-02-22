@@ -1,28 +1,25 @@
+import { GAMES, FRIENDS } from './../shared/mock-data';
 import { User } from "../shared/models/user.model";
+import { Injectable } from '@angular/core';
+import { DataService } from './data.service';
+
+@Injectable()
 
 export class AuthService {
 
-  currentUser!: User;
-  isLoggedIn = false;
-
-  setCurrentUser(user: User) {
-    this.currentUser = user;
-  }
-
-  getCurrentUser() {
-    return this.currentUser
-  }
+  constructor(private data: DataService) {}
 
   isAuth() {
-
-    return this.isLoggedIn
+    return this.data.getCurrentUser() ? true : false;
   }
 
-  logIn() {
-    this.isLoggedIn = true;
+  logIn(user: User) {
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('games', JSON.stringify(GAMES));
+    localStorage.setItem('friends', JSON.stringify(FRIENDS));
   }
 
   logOut() {
-    this.isLoggedIn = false;
+    localStorage.clear();
   }
 }

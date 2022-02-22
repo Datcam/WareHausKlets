@@ -1,5 +1,5 @@
 import { AuthService } from '../../services/auth.service';
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,12 +17,12 @@ export class HeaderComponent implements DoCheck {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngDoCheck(): void {
-    this.isAuth = this.auth.isAuth()
+    this.isAuth = this.auth.isAuth();
   }
 
   addClass(event: any) {
     if (this.previousTarget) {
-      this.previousTarget.className = ''
+      this.previousTarget.className = '';
     }
     if (event === 'games') {
       this.games = true;
@@ -36,7 +36,7 @@ export class HeaderComponent implements DoCheck {
 
   goToGamesPage() {
     if (this.previousTarget) {
-      this.previousTarget.className = ''
+      this.previousTarget.className = '';
     }
     this.profile = false;
     this.games = true;
@@ -48,9 +48,8 @@ export class HeaderComponent implements DoCheck {
 
   logOut() {
     this.router.navigate(['games']);
-    this.auth.logOut()
+    this.auth.logOut();
     this.profile = true;
     this.games = false;
   }
-
 }
