@@ -27,9 +27,9 @@
         <form (submit)="filterGames($event)">
           <h4>Filter by price</h4>
           <div class="range-slider-wrap">
-            {{minPrice}}&#8372;
-            <input class="price_range" name="price" type="range" step="10" [min]="minPrice" [max]="maxPrice">
-            {{maxPrice}}&#8372;
+            {{minPrice}}
+            <input class="price-range" name="price" type="range" step="10" [min]="minPrice" [max]="maxPrice">
+            {{maxPrice}}
           </div>
           <h4>Filter by tags</h4>
           <div class="tags">
