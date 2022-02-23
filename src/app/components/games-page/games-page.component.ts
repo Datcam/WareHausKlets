@@ -1,10 +1,11 @@
-import { GAMES } from './../../shared/mock-data';
-import { NotificationService } from '../../services/notification.service';
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { Game } from '../../shared/models/game.model';
 import { AuthService } from '../../services/auth.service';
-import { User } from 'src/app/shared/models/user.model';
 import { DataService } from 'src/app/services/data.service';
+import { NotificationService } from '../../services/notification.service';
+import { Game } from '../../shared/models/game.model';
+import { User } from 'src/app/shared/models/user.model';
+import { GAMES } from './../../shared/mock-data';
+import { Message } from 'src/app/shared/enum-data';
 
 @Component({
   selector: 'app-games-app',
@@ -24,6 +25,7 @@ export class GamesPageComponent implements OnInit, DoCheck {
   isAuth!: boolean;
   userGames!: Game[];
   currentUser: User = this.data.getCurrentUser();
+  message = Message;
 
   constructor(private auth: AuthService, private notification: NotificationService, private data: DataService) { }
   ngDoCheck(): void {
@@ -119,6 +121,6 @@ export class GamesPageComponent implements OnInit, DoCheck {
 
     this.data.saveUserData(this.currentUser);
     this.data.saveGamesData(this.games);
-    this.notification.showMessage(`Game ${addedGame.name} was successfully added!`);
+    this.notification.showMessage(this.message.ADD_GAME);
   }
 }

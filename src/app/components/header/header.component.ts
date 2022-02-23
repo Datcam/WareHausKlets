@@ -1,6 +1,7 @@
-import { AuthService } from '../../services/auth.service';
 import { Component, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { Path } from 'src/app/shared/enum-data';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements DoCheck {
 
   isAuth!: boolean;
+  path = Path;
 
   constructor(private auth: AuthService, private router: Router) {}
 
@@ -18,11 +20,11 @@ export class HeaderComponent implements DoCheck {
   }
 
   logIn() {
-    this.router.navigate(['auth']);
+    this.router.navigate([this.path.AUTH]);
   }
 
   logOut() {
-    this.router.navigate(['games']);
+    this.router.navigate([this.path.GAMES]);
     this.auth.logOut();
   }
 }

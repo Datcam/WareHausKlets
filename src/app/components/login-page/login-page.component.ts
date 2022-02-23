@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { USERS } from '../../shared/mock-data';
+import { AuthService } from '../../services/auth.service';
 import { User } from '../../shared/models/user.model';
+import { USERS } from '../../shared/mock-data';
+import { Path, UserObjectProperty } from 'src/app/shared/enum-data';
 
 @Component({
   selector: 'app-login-page',
@@ -18,6 +19,8 @@ export class LoginPageComponent implements OnInit {
   arr: User[] = USERS;
   check!: boolean;
   noncheck: boolean = false;
+  path = Path;
+  userProperty = UserObjectProperty;
 
   constructor(private auth: AuthService, private router: Router) { }
 
@@ -27,14 +30,15 @@ export class LoginPageComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(this.MIN_PASSWORD_LENGTH)])
     });
   }
-  
+
   onSubmit() {
     this.arr.map((value) => {
-      if (this.form.get('email')?.value === value.email && this.form.get('password')?.value === value.password) {
+      if (this.form.get(this.userProperty.EMAIL)?.value === value.email &&
+        this.form.get(this.userProperty.PASSWORD)?.value === value.password) {
         this.check = true;
         this.noncheck = false;
         this.auth.logIn(value);
-        this.router.navigate(['profile']);
+        this.router.navigate([this.path.PROFILE]);
       }
       else {
         this.noncheck = true;

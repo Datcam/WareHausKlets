@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Friend } from '../../shared/models/friend.model';
-import { NotificationService } from '../../services/notification.service';
-import { User } from 'src/app/shared/models/user.model';
 import { DataService } from 'src/app/services/data.service';
+import { NotificationService } from '../../services/notification.service';
+import { Friend } from '../../shared/models/friend.model';
+import { User } from 'src/app/shared/models/user.model';
+import { Message } from 'src/app/shared/enum-data';
 
 @Component({
   selector: 'app-friends-page',
@@ -18,6 +19,7 @@ export class FriendsPageComponent {
   searchResult!: Friend[];
   showSearchResult: boolean = false;
   searchValue: string = '';
+  message = Message;
 
   constructor(private notification: NotificationService, private data: DataService) { }
 
@@ -40,7 +42,7 @@ export class FriendsPageComponent {
     this.availableFriends.push(removedFriend);
     this.data.saveUserData(this.currentUser);
     this.data.saveFriendsData(this.availableFriends);
-    this.notification.showMessage(`Friend ${removedFriend.name} was successfully removed!`);
+    this.notification.showMessage(this.message.REMOVE_FRIEND);
   }
 
   addFriend(addedFriend: Friend) {
@@ -59,7 +61,7 @@ export class FriendsPageComponent {
     this.userFriendList.push(addedFriend);
     this.data.saveUserData(this.currentUser);
     this.data.saveFriendsData(this.availableFriends);
-    this.notification.showMessage(`Friend ${addedFriend.name} was successfully added!`);
+    this.notification.showMessage(this.message.ADD_FRIEND);
   }
 
   backToFriends() {

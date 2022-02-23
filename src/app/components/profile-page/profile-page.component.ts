@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from '../../shared/models/user.model';
 import { NotificationService } from '../../services/notification.service';
 import { DataService } from 'src/app/services/data.service';
+import { User } from '../../shared/models/user.model';
+import { UserObjectProperty, Message } from 'src/app/shared/enum-data';
 
 
 @Component({
@@ -17,6 +18,9 @@ export class ProfilePageComponent implements OnInit {
   form!: FormGroup;
   enteredEmail!: string;
   currentUser: User = this.data.getCurrentUser();
+  userProperty = UserObjectProperty;
+  message = Message;
+
   constructor(private data: DataService, private notification: NotificationService) { }
 
   ngOnInit(): void {
@@ -28,10 +32,10 @@ export class ProfilePageComponent implements OnInit {
   }
 
   onSubmit() {
-    this.currentUser.userName = this.form.get('name')?.value;
-    this.currentUser.age = this.form.get('age')?.value;
+    this.currentUser.userName = this.form.get(this.userProperty.NAME)?.value;
+    this.currentUser.age = this.form.get(this.userProperty.AGE)?.value;
     this.data.saveUserData(this.currentUser);
-    this.notification.showMessage('Your data was successfully saved!');
+    this.notification.showMessage(this.message.SAVE_DATA);
   }
 
   onEdit() {
