@@ -1,11 +1,11 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { DataService } from 'src/app/services/data.service';
-import { NotificationService } from '../../services/notification.service';
-import { Game } from '../../shared/models/game.model';
-import { User } from 'src/app/shared/models/user.model';
-import { GAMES } from './../../shared/mock-data';
-import { Message } from 'src/app/shared/enum-data';
+import { AuthService } from '@services/auth.service';
+import { DataService } from '@services/data.service';
+import { NotificationService } from '@services/notification.service';
+import { Game } from '@models/game.model';
+import { User } from '@models/user.model';
+import { GAMES } from '@shared/mock-data';
+import { Message } from '@shared/enum-data';
 
 @Component({
   selector: 'app-games-app',

@@ -1,7 +1,7 @@
 import { Component, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { Path } from 'src/app/shared/enum-data';
+import { AuthService } from '@services/auth.service';
+import { Path } from '@shared/enum-data';
 
 @Component({
   selector: 'app-header',

@@ -1,7 +1,7 @@
-import { GAMES, FRIENDS } from './../shared/mock-data';
-import { User } from "../shared/models/user.model";
 import { Injectable } from '@angular/core';
-import { DataService } from './data.service';
+import { DataService } from '@services/data.service';
+import { User } from "@models/user.model";
+import { GAMES, FRIENDS } from '@shared/mock-data';
 
 @Injectable()
 

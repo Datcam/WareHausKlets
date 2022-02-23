@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
-import { NotificationService } from '../../services/notification.service';
-import { Game } from '../../shared/models/game.model';
-import { Message } from 'src/app/shared/enum-data';
+import { DataService } from '@services/data.service';
+import { NotificationService } from '@services/notification.service';
+import { Game } from '@models/game.model';
+import { Message } from '@shared/enum-data';
 
 @Component({
   selector: 'app-library-page',

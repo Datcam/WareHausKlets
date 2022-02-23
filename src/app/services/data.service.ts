@@ -1,6 +1,6 @@
-import { Friend } from './../shared/models/friend.model';
-import { User } from "../shared/models/user.model";
-import { Game } from '../shared/models/game.model';
+import { Friend } from '@models/friend.model';
+import { User } from "@models/user.model";
+import { Game } from '@models/game.model';
 
 export class DataService {
 

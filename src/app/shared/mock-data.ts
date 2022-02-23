@@ -1,6 +1,6 @@
-import { User } from "./models/user.model";
-import { Friend } from './models/friend.model';
-import { Game } from './models/game.model';
+import { User } from "@models/user.model";
+import { Friend } from '@models/friend.model';
+import { Game } from '@models/game.model';
 
 export const USERS: User[] = [
   {

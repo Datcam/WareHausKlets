@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { User } from '../../shared/models/user.model';
-import { USERS } from '../../shared/mock-data';
-import { Path, UserObjectProperty } from 'src/app/shared/enum-data';
+import { AuthService } from '@services/auth.service';
+import { User } from '@models/user.model';
+import { USERS } from '@shared/mock-data';
+import { Path, UserObjectProperty } from '@shared/enum-data';
 
 @Component({
   selector: 'app-login-page',

@@ -4,18 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { GamesPageComponent } from './components/games-page/games-page.component';
-import { LibraryPageComponent } from './components/library-page/library-page.component';
-import { FriendsPageComponent } from './components/friends-page/friends-page.component';
-import { ProfilePageComponent } from './components/profile-page/profile-page.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { NotificationComponent } from './components/notification/notification.component';
+import { HeaderComponent } from '@header/header.component';
+import { GamesPageComponent } from '@games-page/games-page.component';
+import { LibraryPageComponent } from '@library-page/library-page.component';
+import { FriendsPageComponent } from '@friends-page/friends-page.component';
+import { ProfilePageComponent } from '@profile-page/profile-page.component';
+import { LoginPageComponent } from '@login-page/login-page.component';
+import { NotificationComponent } from '@notification/notification.component';
 
-import { NotificationService } from './services/notification.service';
-import { DataService } from 'src/app/services/data.service';
-import { AuthService } from './services/auth.service';
-import { AuthGuard } from './services/auth-guard.service';
+import { NotificationService } from '@services/notification.service';
+import { DataService } from '@services/data.service';
+import { AuthService } from '@services/auth.service';
+import { AuthGuard } from '@services/auth-guard.service';
+import { ImagePathPipe } from '@shared/pipes/image-path.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthGuard } from './services/auth-guard.service';
     FriendsPageComponent,
     ProfilePageComponent,
     LoginPageComponent,
-    NotificationComponent
+    NotificationComponent,
+    ImagePathPipe
   ],
   imports: [
     BrowserModule,

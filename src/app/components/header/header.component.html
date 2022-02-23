@@ -1,5 +1,5 @@
 <div class="header-container">
-  <img src="../../assets/logo/steam-logo.svg" alt="steam-logo" class="logo" routerLink="/games">
+  <img [src]="'steam-logo.svg' | imagePath" alt="steam-logo" class="logo" routerLink="/games">
   <div class="header" *ngIf="!isAuth">
     <p>Welcome to Steam!</p>
     <button class="login-btn" (click)="logIn()">LogIn</button>

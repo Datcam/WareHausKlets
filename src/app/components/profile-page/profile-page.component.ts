@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NotificationService } from '../../services/notification.service';
-import { DataService } from 'src/app/services/data.service';
-import { User } from '../../shared/models/user.model';
-import { UserObjectProperty, Message } from 'src/app/shared/enum-data';
+import { NotificationService } from '@services/notification.service';
+import { DataService } from '@services/data.service';
+import { User } from '@models/user.model';
+import { UserObjectProperty, Message } from '@shared/enum-data';
 
 
 @Component({

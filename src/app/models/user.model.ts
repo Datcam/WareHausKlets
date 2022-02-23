@@ -1,5 +1,5 @@
-import { Game } from './game.model';
-import { Friend } from './friend.model';
+import { Game } from '@models/game.model';
+import { Friend } from '@models/friend.model';
 
 export interface User {
   id: number,

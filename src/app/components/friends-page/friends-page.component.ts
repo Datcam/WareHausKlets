@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
-import { NotificationService } from '../../services/notification.service';
-import { Friend } from '../../shared/models/friend.model';
-import { User } from 'src/app/shared/models/user.model';
-import { Message } from 'src/app/shared/enum-data';
+import { DataService } from '@services/data.service';
+import { NotificationService } from '@services/notification.service';
+import { Friend } from '@models/friend.model';
+import { User } from '@models/user.model';
+import { Message } from '@shared/enum-data';
 
 @Component({
   selector: 'app-friends-page',
