@@ -117,7 +117,13 @@ export class GamesPageComponent implements OnInit, DoCheck {
       if (game.id === addedGame.id) {
         arr.splice(idx, 1);
       }
-    })
+    });
+
+    this.filteredData.map((game, idx, arr) => {
+      if (game.id === addedGame.id) {
+        arr.splice(idx, 1);
+      }
+    });
 
     this.data.saveUserData(this.currentUser);
     this.data.saveGamesData(this.games);
