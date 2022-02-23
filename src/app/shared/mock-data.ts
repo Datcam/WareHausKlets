@@ -5,8 +5,8 @@ import { Game } from '@models/game.model';
 export const USERS: User[] = [
   {
     id: 1,
-    email: 'yarmannagibator@gmail.com',
-    password: 'toothpaste',
+    email: 'admin@gmail.com',
+    password: 'admin',
     userName: '',
     age: 0,
     friends: [
