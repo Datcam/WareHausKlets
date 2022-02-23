@@ -20,6 +20,7 @@ export class ProfilePageComponent implements OnInit {
   currentUser: User = this.data.getCurrentUser();
   userProperty = UserObjectProperty;
   message = Message;
+  notValid: boolean = false;
 
   constructor(private data: DataService, private notification: NotificationService) { }
 
@@ -32,15 +33,19 @@ export class ProfilePageComponent implements OnInit {
   }
 
   onSubmit() {
-    this.currentUser.userName = this.form.get(this.userProperty.NAME)?.value;
-    this.currentUser.age = this.form.get(this.userProperty.AGE)?.value;
-    this.data.saveUserData(this.currentUser);
-    this.notification.showMessage(this.message.SAVE_DATA);
+    if (!this.form.get(this.userProperty.NAME)?.invalid && this.form.get(this.userProperty.AGE)?.value) {
+      this.notValid = false;
+      this.currentUser.userName = this.form.get(this.userProperty.NAME)?.value;
+      this.currentUser.age = this.form.get(this.userProperty.AGE)?.value;
+      this.data.saveUserData(this.currentUser);
+      this.notification.showMessage(this.message.SAVE_DATA);
+    } else {
+      this.notValid = true;
+    }
   }
 
   onEdit() {
     this.currentUser.userName = '';
     this.currentUser.age = 0;
-    this.data.saveUserData(this.currentUser);
   }
 }

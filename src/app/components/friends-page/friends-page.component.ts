@@ -20,6 +20,7 @@ export class FriendsPageComponent {
   showSearchResult: boolean = false;
   searchValue: string = '';
   message = Message;
+  title = ['Search', 'Friends'];
 
   constructor(private notification: NotificationService, private data: DataService) { }
 

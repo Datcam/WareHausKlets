@@ -1,15 +1,15 @@
 <div class="container">
   <app-notification></app-notification>
-  <h2 class="title">Friends</h2>
+  <h2 class="title">{{ title[1] }}</h2>
   <div>
-    <p class="form-title">Search Friends</p>
+    <p class="form-title">{{ title.join(' ') }}</p>
     <div class="search-form">
-      <input type="text" placeholder="Search Friends" [(ngModel)]="searchValue">
-      <button class="search-btn" (click)="searchFriends()">Search</button>
+      <input type="text" placeholder="{{ title.join(' ') }}" [(ngModel)]="searchValue">
+      <button class="search-btn" (click)="searchFriends()">{{ title[0] }}</button>
     </div>
   </div>
   <div class="friends" *ngIf="!showSearchResult">
-    <h2 class="title">My Friends</h2>
+    <h2 class="title">My {{ title[1] }}</h2>
     <h2 class="message" *ngIf="!userFriendList.length">You don't have any friends yet...</h2>
     <div class="friend-item" *ngFor="let friend of userFriendList">
       <p>{{ friend.name }}</p>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="friends" *ngIf="showSearchResult">
-    <h2 class="title">Search Friends: {{ searchValue }}</h2>
+    <h2 class="title">{{ title.join(' ') }}: {{ searchValue }}</h2>
     <div class="friend-item" *ngFor="let friend of searchResult">
       <p>{{ friend.name }}</p>
       <button class="add-btn" (click)="addFriend(friend)">Add Friend</button>
