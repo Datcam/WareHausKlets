@@ -3,8 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'steam-app';
+  title = 'WarehouseKlets';
+
+  navigateTo(url: string): void {
+    window.location.href = url;
+  }
 }
