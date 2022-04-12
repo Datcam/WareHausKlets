@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WarehouseKlets';
+
+  navigateTo(url: string): void {
+    window.location.href = url;
+  }
 }

@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+  - '16'
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  directories:
+    - ./node_modules
+
+before_install:
+  - npm install -g @angular/cli
+install:
+  - npm install
+
+script:
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+
+before_deploy:
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+
+
+deploy:
+  provider: heroku
+  api_key: aac48141-4b6c-40c6-8862-1d7fdc64bc44
+  app: warehouse-klets
