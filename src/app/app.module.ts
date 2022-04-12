@@ -1,18 +1,47 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { HeaderComponent } from '@header/header.component';
+import { GamesPageComponent } from '@games-page/games-page.component';
+import { LibraryPageComponent } from '@library-page/library-page.component';
+import { FriendsPageComponent } from '@friends-page/friends-page.component';
+import { ProfilePageComponent } from '@profile-page/profile-page.component';
+import { LoginPageComponent } from '@login-page/login-page.component';
+import { NotificationComponent } from '@notification/notification.component';
+
+import { NotificationService } from '@services/notification.service';
+import { DataService } from '@services/data.service';
+import { AuthService } from '@services/auth.service';
+import { AuthGuard } from '@services/auth-guard.service';
+import { ImagePathPipe } from '@shared/pipes/image-path.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    GamesPageComponent,
+    LibraryPageComponent,
+    FriendsPageComponent,
+    ProfilePageComponent,
+    LoginPageComponent,
+    NotificationComponent,
+    ImagePathPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService, 
+    AuthGuard, 
+    NotificationService,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

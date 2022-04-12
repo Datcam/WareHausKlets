@@ -1,0 +1,16 @@
+<div class="container">
+  <app-notification></app-notification>
+  <h2 class="title">My Games</h2>
+  <div class="cards-container">
+    <div class="card" *ngFor="let game of userGames">
+      <img class="card-img" [src]="game.img" [alt]="game.name">
+      <h4 class="card-title">{{ game.name }}</h4>
+      <p class="card-description">{{ game.description }}</p>
+      <div class="btn-container">
+        <button class="download-btn" (click)="download()">Download</button>
+        <button class="share-btn" (click)="share()">Share</button>
+      </div>
+    </div>
+  </div>
+  <h2 class="message" *ngIf="!userGames.length">You don't have any games yet...</h2>
+</div>

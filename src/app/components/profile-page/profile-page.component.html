@@ -1,0 +1,52 @@
+<div class="container">
+  <app-notification></app-notification>
+  <form class="card" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="profile" (click)="onEdit()" *ngIf="this.currentUser.userName && this.currentUser.age">
+      <h2 class="card-title">Profile</h2>
+      <label> Username:</label><br />
+      <span><b>{{ this.currentUser.userName }}</b></span><br />
+      <label> Email:</label><br />
+      <span><b>{{ this.currentUser.email }}</b></span><br />
+
+      <label> Age:</label><br />
+      <span><b>{{ this.currentUser.age }}</b></span>
+      <div class="card-action">
+        <br />
+        <button type="submit" class="modal-action">Edit</button>
+        <br />
+      </div>
+    </div>
+    <div class="card-content" *ngIf="!this.currentUser.userName || !this.currentUser.age">
+      <h2 class="card-title">Profile</h2>
+      <div class="input-field">
+        <label for="text">Username:</label><br />
+        <input [placeholder]="userProperty.NAME | titlecase" [formControlName]="userProperty.NAME" [id]="userProperty.NAME"
+          type="text" /><br />
+        <span class="red-text"
+          *ngIf="form.get(userProperty.NAME)?.invalid && form.get(userProperty.NAME)?.touched">
+          Username is too short!
+        </span>
+      </div>
+      <div class="input-field">
+        <label [for]="userProperty.EMAIL">Email:</label><br />
+        <input [placeholder]="userProperty.EMAIL | titlecase" [id]="userProperty.EMAIL" [value]="enteredEmail"
+          [type]="userProperty.EMAIL" disabled/><br />
+      </div>
+      <div class="input-field">
+        <label [for]="userProperty.AGE">Age:</label><br />
+        <input [placeholder]="userProperty.AGE | titlecase" [formControlName]="userProperty.AGE" [id]="userProperty.AGE"
+          type="number" /><br />
+        <span class="red-text"
+          *ngIf="form.get(userProperty.AGE)?.invalid && form.get(userProperty.AGE)?.touched">
+          Please enter your age!
+        </span>
+      </div>
+      <div class="card-action">
+        <br />
+        <button type="submit" class="modal-action">Save</button>
+        <br>
+        <span class="red-text" *ngIf="notValid">Please enter your data!</span>
+      </div>
+    </div>
+  </form>
+</div>

@@ -3,9 +3,23 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@services/*": ["src/app/services/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@models/*": ["src/app/models/*"],
+      "@friends-page/*": ["src/app/components/friends-page/*"],
+      "@games-page/*": ["src/app/components/games-page/*"],
+      "@library-page/*": ["src/app/components/library-page/*"],
+      "@login-page/*": ["src/app/components/login-page/*"],
+      "@profile-page/*": ["src/app/components/profile-page/*"],
+      "@header/*": ["src/app/components/header/*"],
+      "@notification/*": ["src/app/components/notification/*"],
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -17,7 +31,7 @@
     "target": "es2017",
     "module": "es2020",
     "lib": [
-      "es2018",
+      "es2020",
       "dom"
     ]
   },

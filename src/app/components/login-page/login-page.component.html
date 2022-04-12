@@ -1,0 +1,30 @@
+<body>
+    <form class="card" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="card-content">
+            <h2 class="card-title">Sing in</h2>
+            <div class="input-field">
+                <label [for]="userProperty.EMAIL">Email:</label><br>
+                <input [placeholder]="userProperty.EMAIL | titlecase" [formControlName]="userProperty.EMAIL"
+                    [id]="userProperty.EMAIL" [type]="userProperty.EMAIL"><br>
+                <span class="red-text"
+                    *ngIf="form.get(userProperty.EMAIL)?.invalid && form.get(userProperty.EMAIL)?.touched">
+                    Check entered email!
+                </span>
+            </div>
+            <div class="input-field">
+                <label [for]="userProperty.PASSWORD">Password:</label><br>
+                <input [placeholder]="userProperty.PASSWORD | titlecase" [formControlName]="userProperty.PASSWORD"
+                    [id]="userProperty.PASSWORD" [type]="userProperty.PASSWORD"><br>
+                <span class="red-text"
+                    *ngIf="form.get(userProperty.PASSWORD)?.invalid && form.get(userProperty.PASSWORD)?.touched">
+                    Check entered password!
+                </span>
+            </div>
+        </div>
+        <div class="card-action"><br>
+            <button type="submit" class="modal-action" [disabled]="form.invalid">Sing in</button>
+            <br>
+            <span class="red-text" *ngIf="noncheck && !check">Check entered data!</span>
+        </div>
+    </form>
+</body>
