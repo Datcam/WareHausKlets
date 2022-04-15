@@ -13,6 +13,10 @@ import {DeliveryPageComponent} from "./components/delivery/delivery-page.compone
 import {AboutUsPageComponent} from "./components/about_us/about-us-page.component";
 import {ContactsPageComponent} from "./components/contacts/contacts-page.component";
 import {WarehousePageComponent} from "./components/warehouse/warehouse-page.component";
+import {OdessaWarehousePageComponent} from "./components/odessa-warehouse/odessa-warehouse-page.component";
+import {KeywWarehousePageComponent} from "./components/kyew-warehouse/keyw-warehouse-page.component";
+import {LvivWarehousePageComponent} from "./components/lviv-warehouse/lviv-warehouse-page.component";
+import {DneprWarehousePageComponent} from "./components/dnepr-warehouse/dnepr-warehouse-page.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch:'full' },
@@ -25,6 +29,10 @@ const routes: Routes = [
   { path: 'contacts', component: ContactsPageComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard] },
   { path: 'warehouse', component: WarehousePageComponent, canActivate: [AuthGuard] },
+  { path: 'odessa-warehouse', component: OdessaWarehousePageComponent, canActivate: [AuthGuard] },
+  { path: 'kyew-warehouse', component: KeywWarehousePageComponent, canActivate: [AuthGuard] },
+  { path: 'lviv-warehouse', component: LvivWarehousePageComponent, canActivate: [AuthGuard] },
+  { path: 'dnepr-warehouse', component: DneprWarehousePageComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

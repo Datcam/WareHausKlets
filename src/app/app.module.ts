@@ -35,6 +35,10 @@ import {MatStepperModule} from "@angular/material/stepper";
 import {AboutUsPageComponent} from "./components/about_us/about-us-page.component";
 import {ContactsPageComponent} from "./components/contacts/contacts-page.component";
 import {WarehousePageComponent} from "./components/warehouse/warehouse-page.component";
+import {OdessaWarehousePageComponent} from "./components/odessa-warehouse/odessa-warehouse-page.component";
+import {KeywWarehousePageComponent} from "./components/kyew-warehouse/keyw-warehouse-page.component";
+import {LvivWarehousePageComponent} from "./components/lviv-warehouse/lviv-warehouse-page.component";
+import {DneprWarehousePageComponent} from "./components/dnepr-warehouse/dnepr-warehouse-page.component";
 
 @NgModule({
   declarations: [
@@ -55,6 +59,10 @@ import {WarehousePageComponent} from "./components/warehouse/warehouse-page.comp
     AboutUsPageComponent,
     ContactsPageComponent,
     WarehousePageComponent,
+    OdessaWarehousePageComponent,
+    KeywWarehousePageComponent,
+    LvivWarehousePageComponent,
+    DneprWarehousePageComponent,
   ],
   imports: [
     BrowserModule,
