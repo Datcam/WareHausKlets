@@ -22,10 +22,12 @@ export class ProfilePageComponent implements OnInit {
   userProperty = UserObjectProperty;
   message = Message;
   notValid: boolean = false;
+  userName: string | undefined = '';
 
   constructor(private data: DataService, private notification: NotificationService, public http: HttpClient) { }
 
   ngOnInit(): void {
+    this.userName = this.currentUser.name;
     this.enteredEmail = this.currentUser.email;
     this.form = new FormGroup({
       name: new FormControl(this.currentUser.name || '', [Validators.required, Validators.minLength(this.MIN_NAME_LENGTH)]),

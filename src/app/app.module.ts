@@ -26,6 +26,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import { HttpClientModule } from "@angular/common/http";
 import { SignUpPageComponent } from "./components/sign-up-page/sign-up-page.component";
+import { EventBusService } from "@services/event-bus.service";
+import { CarouselModule, WavesModule } from "angular-bootstrap-md";
+import { NewsPageComponent } from "./components/news/news-page.component";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {DeliveryPageComponent} from "./components/delivery/delivery-page.component";
+import {MatStepperModule} from "@angular/material/stepper";
+import {AboutUsPageComponent} from "./components/about_us/about-us-page.component";
+import {ContactsPageComponent} from "./components/contacts/contacts-page.component";
+import {WarehousePageComponent} from "./components/warehouse/warehouse-page.component";
 
 @NgModule({
   declarations: [
@@ -40,7 +49,12 @@ import { SignUpPageComponent } from "./components/sign-up-page/sign-up-page.comp
     NotificationComponent,
     ImagePathPipe,
     DialogRequestServiceComponent,
-    SignUpPageComponent
+    SignUpPageComponent,
+    NewsPageComponent,
+    DeliveryPageComponent,
+    AboutUsPageComponent,
+    ContactsPageComponent,
+    WarehousePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +66,11 @@ import { SignUpPageComponent } from "./components/sign-up-page/sign-up-page.comp
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule,
+    WavesModule,
+    MatExpansionModule,
+    MatStepperModule
   ],
   providers: [
     AuthService,
@@ -60,6 +78,7 @@ import { SignUpPageComponent } from "./components/sign-up-page/sign-up-page.comp
     NotificationService,
     DataService,
     DialogRequestServiceComponent,
+    EventBusService
   ],
   bootstrap: [AppComponent]
 })

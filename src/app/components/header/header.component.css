@@ -58,6 +58,7 @@ a {
   color: inherit;
   font-size: 20px;
   line-height: 23px;
+  width: 80px;
 }
 
 a:hover,

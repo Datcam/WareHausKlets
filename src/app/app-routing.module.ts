@@ -8,16 +8,23 @@ import { FriendsPageComponent } from '@friends-page/friends-page.component';
 import { ProfilePageComponent } from '@profile-page/profile-page.component';
 import { LoginPageComponent } from '@login-page/login-page.component';
 import { SignUpPageComponent } from "./components/sign-up-page/sign-up-page.component";
+import { NewsPageComponent } from "./components/news/news-page.component";
+import {DeliveryPageComponent} from "./components/delivery/delivery-page.component";
+import {AboutUsPageComponent} from "./components/about_us/about-us-page.component";
+import {ContactsPageComponent} from "./components/contacts/contacts-page.component";
+import {WarehousePageComponent} from "./components/warehouse/warehouse-page.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch:'full' },
   { path: 'auth', component: LoginPageComponent },
   { path: 'sign-up', component: SignUpPageComponent },
   { path: 'main', component: MainPageComponent },
-  { path: 'games', component: GamesPageComponent },
-  { path: 'library', component: LibraryPageComponent, canActivate: [AuthGuard] },
-  { path: 'friends', component: FriendsPageComponent, canActivate: [AuthGuard] },
+  { path: 'news', component: NewsPageComponent },
+  { path: 'delivery', component: DeliveryPageComponent, canActivate: [AuthGuard] },
+  { path: 'about_us', component: AboutUsPageComponent, canActivate: [AuthGuard] },
+  { path: 'contacts', component: ContactsPageComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard] },
+  { path: 'warehouse', component: WarehousePageComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

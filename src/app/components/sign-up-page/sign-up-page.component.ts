@@ -56,7 +56,8 @@ export class SignUpPageComponent implements OnInit {
 
         this.http.post<any>('http://localhost:3000/user_list', {
           email: this.form.get(this.userProperty.EMAIL)?.value,
-          password: this.form.get(this.userProperty.PASSWORD)?.value
+          password: this.form.get(this.userProperty.PASSWORD)?.value,
+          role: 'user'
         })
           .subscribe(data => {
             console.log(data);

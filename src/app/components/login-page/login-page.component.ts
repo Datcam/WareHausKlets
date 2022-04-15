@@ -8,6 +8,7 @@ import { Path, UserObjectProperty } from '@shared/enum-data';
 import { HttpClient } from "@angular/common/http";
 import { NotificationService } from "@services/notification.service";
 import { Message } from "@shared/enum-data";
+import {EventBusService} from "@services/event-bus.service";
 
 @Component({
   selector: 'sign-up-page',
@@ -27,8 +28,9 @@ export class LoginPageComponent implements OnInit {
   message = Message;
   error = false;
   errorPassword = false;
+  userName: string | null | undefined;
 
-  constructor(private auth: AuthService, private router: Router, public http: HttpClient, public notification: NotificationService) { }
+  constructor(private auth: AuthService, private router: Router, public http: HttpClient, public notification: NotificationService, public eventBus: EventBusService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -67,6 +69,8 @@ export class LoginPageComponent implements OnInit {
            this.auth.logIn(currentUser);
            this.router.navigate([this.path.PROFILE]);
            this.notification.showMessage(this.message.SUCCESS_SIGN_IN);
+           // @ts-ignore
+           this.eventBus.addToInventory(currentUser.name);
          } else {
            this.noncheck = true;
            this.errorPassword = true;
