@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '@header/header.component';
 import { GamesPageComponent } from '@games-page/games-page.component';
+import { MainPageComponent } from '@main-page/main-page.component';
 import { LibraryPageComponent } from '@library-page/library-page.component';
 import { FriendsPageComponent } from '@friends-page/friends-page.component';
 import { ProfilePageComponent } from '@profile-page/profile-page.component';
@@ -17,30 +18,48 @@ import { DataService } from '@services/data.service';
 import { AuthService } from '@services/auth.service';
 import { AuthGuard } from '@services/auth-guard.service';
 import { ImagePathPipe } from '@shared/pipes/image-path.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from "@angular/material/dialog";
+import { DialogRequestServiceComponent } from "./components/dialog-request-service/dialog-request-service.component";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
+import { HttpClientModule } from "@angular/common/http";
+import { SignUpPageComponent } from "./components/sign-up-page/sign-up-page.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     GamesPageComponent,
+    MainPageComponent,
     LibraryPageComponent,
     FriendsPageComponent,
     ProfilePageComponent,
     LoginPageComponent,
     NotificationComponent,
-    ImagePathPipe
+    ImagePathPipe,
+    DialogRequestServiceComponent,
+    SignUpPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [
-    AuthService, 
-    AuthGuard, 
+    AuthService,
+    AuthGuard,
     NotificationService,
-    DataService
+    DataService,
+    DialogRequestServiceComponent,
   ],
   bootstrap: [AppComponent]
 })

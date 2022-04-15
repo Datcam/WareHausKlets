@@ -1,0 +1,33 @@
+<body>
+    <form class="card" [formGroup]="form">
+        <div class="card-content">
+            <h2 class="card-title">Регістрація</h2>
+            <div class="input-field">
+                <label [for]="userProperty.EMAIL">Імейл:</label><br>
+                <input [placeholder]="userProperty.EMAIL | titlecase" [formControlName]="userProperty.EMAIL"
+                    [id]="userProperty.EMAIL" [type]="userProperty.EMAIL"><br>
+                <span class="red-text"
+                    *ngIf="form.get(userProperty.EMAIL)?.invalid && form.get(userProperty.EMAIL)?.touched">
+                    Перевірте введений імейл!
+                </span>
+            </div>
+            <div class="input-field">
+                <label [for]="userProperty.PASSWORD">Пароль:</label><br>
+                <input [placeholder]="userProperty.PASSWORD | titlecase" [formControlName]="userProperty.PASSWORD"
+                    [id]="userProperty.PASSWORD" [type]="userProperty.PASSWORD"><br>
+              <label [for]="userProperty.PASSWORD">Confirm password:</label><br>
+              <input [placeholder]="userProperty.PASSWORD | titlecase" [formControlName]="userProperty.CONFIRM_PASSWORD"
+                     [id]="userProperty.PASSWORD" [type]="userProperty.PASSWORD"><br>
+                <span class="red-text"
+                    *ngIf="form.get(userProperty.PASSWORD)?.invalid && form.get(userProperty.PASSWORD)?.touched">
+                    Перевірьте введений пароль!
+                </span>
+            </div>
+        </div>
+        <div class="card-action"><br>
+            <button type="button" class="modal-action" (click)="onSubmit()" >Зарееструватись</button>
+            <br>
+            <span class="red-text" *ngIf="noncheck && !check">Перевірте введені дані!</span>
+        </div>
+    </form>
+</body>

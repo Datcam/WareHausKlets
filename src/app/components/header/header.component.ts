@@ -24,7 +24,7 @@ export class HeaderComponent implements DoCheck {
   }
 
   logOut() {
-    this.router.navigate([this.path.GAMES]);
+    this.router.navigate([this.path.MAIN]);
     this.auth.logOut();
   }
 }

@@ -5,9 +5,12 @@ import { AuthService } from '@services/auth.service';
 import { User } from '@models/user.model';
 import { USERS } from '@shared/mock-data';
 import { Path, UserObjectProperty } from '@shared/enum-data';
+import { HttpClient } from "@angular/common/http";
+import { NotificationService } from "@services/notification.service";
+import { Message } from "@shared/enum-data";
 
 @Component({
-  selector: 'app-login-page',
+  selector: 'sign-up-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
@@ -21,8 +24,11 @@ export class LoginPageComponent implements OnInit {
   noncheck: boolean = false;
   path = Path;
   userProperty = UserObjectProperty;
+  message = Message;
+  error = false;
+  errorPassword = false;
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router, public http: HttpClient, public notification: NotificationService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -32,18 +38,44 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit() {
-    this.arr.map((value) => {
-      if (this.form.get(this.userProperty.EMAIL)?.value === value.email &&
-        this.form.get(this.userProperty.PASSWORD)?.value === value.password) {
-        this.check = true;
-        this.noncheck = false;
-        this.auth.logIn(value);
-        this.router.navigate([this.path.PROFILE]);
-      }
-      else {
-        this.noncheck = true;
-      }
-    })
+    const email = this.form.get(this.userProperty.EMAIL)?.value;
+    const password = this.form.get(this.userProperty.PASSWORD)?.value;
+
+    this.http.get('http://localhost:3000/user_list')
+      .subscribe(res => {
+        const a = JSON.stringify(res);
+        const b = JSON.parse(a);
+        let currentUser;
+
+        // @ts-ignore
+        const isPresentUser = b.some((item) => {
+          if (item.email === email) {
+            currentUser = item;
+
+            return true;
+          }
+        });
+
+       if (isPresentUser) {
+         // @ts-ignore
+         localStorage.setItem('currentUserId', JSON.stringify(currentUser.id));
+
+         // @ts-ignore
+         if (currentUser.password === password) {
+           this.check = true;
+           this.noncheck = false;
+           this.auth.logIn(currentUser);
+           this.router.navigate([this.path.PROFILE]);
+           this.notification.showMessage(this.message.SUCCESS_SIGN_IN);
+         } else {
+           this.noncheck = true;
+           this.errorPassword = true;
+         }
+       } else {
+         console.log('aaa')
+         this.error = true;
+       }
+      });
   }
 }
 

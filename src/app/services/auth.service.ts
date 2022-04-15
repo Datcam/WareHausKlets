@@ -13,7 +13,7 @@ export class AuthService {
     return this.data.getCurrentUser() ? true : false;
   }
 
-  logIn(user: User) {
+  logIn(user: any) {
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('games', JSON.stringify(GAMES));
     localStorage.setItem('friends', JSON.stringify(FRIENDS));

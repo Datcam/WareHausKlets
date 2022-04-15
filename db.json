@@ -1,0 +1,32 @@
+{
+  "request_new_client": [
+    {
+      "name": "Максим",
+      "phone": "38093380919",
+      "id": 1
+    }
+  ],
+  "user_list": [
+    {
+      "email": "dima@gmail.com",
+      "password": "222",
+      "id": 2,
+      "name": "Dima",
+      "age": 30
+    },
+    {
+      "email": "klecdeveloper@gmail.com",
+      "password": "1111",
+      "id": 3,
+      "name": "Максим",
+      "age": 28
+    },
+    {
+      "email": "yarmannagibator@gmail.com",
+      "password": "2121",
+      "id": 4,
+      "name": "Лейла",
+      "age": 30
+    }
+  ]
+}

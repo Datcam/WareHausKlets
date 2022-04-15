@@ -9,6 +9,7 @@
       "@models/*": ["src/app/models/*"],
       "@friends-page/*": ["src/app/components/friends-page/*"],
       "@games-page/*": ["src/app/components/games-page/*"],
+      "@main-page/*": ["src/app/components/main-page/*"],
       "@library-page/*": ["src/app/components/library-page/*"],
       "@login-page/*": ["src/app/components/login-page/*"],
       "@profile-page/*": ["src/app/components/profile-page/*"],

@@ -3,18 +3,23 @@ export enum Path {
   GAMES = 'games',
   LIBRARY = 'library',
   FRIENDS = 'friends',
-  PROFILE = 'profile'
+  PROFILE = 'profile',
+  MAIN = 'main',
+  SIGN_UP_SUCCESS_PAGE = 'sign-up-success_page',
 }
 
 export enum UserObjectProperty {
   EMAIL = 'email',
   PASSWORD = 'password',
+  CONFIRM_PASSWORD = 'confirm_password',
   NAME = 'name',
   AGE = 'age'
 }
 
 export enum Message {
-  SAVE_DATA = 'Your data was successfully saved!',
+  SAVE_DATA = 'Ваші данні були успішно відправлені!',
+  SUCCESS_SIGN_UP = 'Ви успішно зарееструвались!',
+  SUCCESS_SIGN_IN = 'Ви успішно увійшли!',
   ADD_FRIEND = 'Friend was successfully added!',
   REMOVE_FRIEND = `Friend was successfully removed!`,
   ADD_GAME = 'Game was successfully added!',
