@@ -62,6 +62,8 @@ export class SignUpPageComponent implements OnInit {
           .subscribe(data => {
             console.log(data);
             localStorage.setItem('currentUserId', JSON.stringify(data.id));
+            localStorage.setItem('currentUserEmail', JSON.stringify(data.email));
+            localStorage.setItem('currentUserRole', JSON.stringify(data.role));
             this.router.navigate([this.path.PROFILE]);
             this.notification.showMessage(this.message.SUCCESS_SIGN_UP);
           });

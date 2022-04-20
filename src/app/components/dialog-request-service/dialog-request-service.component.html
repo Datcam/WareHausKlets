@@ -11,7 +11,7 @@
     <input style="border:  0" matInput [(ngModel)]="data.phone">
   </mat-form-field>
 </div>
-<p *ngIf="error" style="color: red; font-size: 10px">* всі поля почвинні бути заповнені</p>
+<p *ngIf="error" style="color: red; font-size: 10px">* всі поля повинні бути заповнені</p>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Відмінити</button>
   <button (click)="submit()" mat-button cdkFocusInitial>Відправити</button>

@@ -1,29 +1,63 @@
 {
+  "request_new_warehouse_client": [
+    {
+      "status": false,
+      "square": -3,
+      "type": "Техніка",
+      "count": 3,
+      "email": "\"liskovbarbara2022@gmail.com\"",
+      "userId": "6",
+      "id": 5
+    },
+    {
+      "status": true,
+      "square": 3,
+      "type": "Техніка",
+      "count": 3,
+      "email": "\"klecdeveloper@gmail.com\"",
+      "userId": "5",
+      "id": 6
+    }
+  ],
   "request_new_client": [],
   "user_list": [
     {
-      "email": "klecdeveloper@gmail.com",
+      "email": "m.klets@ext.tricentis.com",
       "password": "1111",
-      "id": 1,
-      "name": "Maksym Klets",
-      "age": 28,
-      "role": "user"
+      "role": "user",
+      "id": 2
+    },
+    {
+      "email": "Maksym_Klets@epam.com",
+      "password": "1111",
+      "role": "user",
+      "id": 3
     },
     {
       "email": "admin@gmail.com",
       "password": "admin",
-      "id": 2,
-      "name": "Administartor",
-      "age": 99,
-      "role": "admin"
+      "role": "Administrator",
+      "id": 4,
+      "name": "Admin",
+      "age": 3
+    },
+    {
+      "email": "klecdeveloper@gmail.com",
+      "password": "1111",
+      "role": "user",
+      "id": 5
     },
     {
       "email": "liskovbarbara2022@gmail.com",
-      "password": "aaaa",
+      "password": "1111",
       "role": "user",
-      "id": 3,
-      "name": "Loskov",
-      "age": 88
+      "id": 6
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "role": "user",
+      "id": 7
     }
   ]
 }

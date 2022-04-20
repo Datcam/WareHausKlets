@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Запит на оренду приміщення</h1>
+<div mat-dialog-content>
+  <mat-form-field style="display: block">
+    <mat-label>Площа м2</mat-label>
+    <input type="number" style="border:  0" matInput [(ngModel)]="data.square">
+  </mat-form-field>
+<!--  <mat-form-field style="display: block">-->
+<!--    <mat-label>Тип</mat-label>-->
+<!--    <input style="border:  0" matInput [(ngModel)]="data.type">-->
+<!--  </mat-form-field>-->
+  <div style="display: block; margin: 25px 0;">
+    <mat-label style="    margin: 13px 0;
+    display: block;
+    color: grey;">Тип</mat-label>
+    <mat-select  [(ngModel)]="data.type">
+      <mat-option *ngFor="let type of types" [value]="type.viewValue">
+        {{type.viewValue}}
+      </mat-option>
+    </mat-select>
+  </div>
+  <mat-form-field style="display: block">
+    <mat-label>Термін(днів)</mat-label>
+    <input type="number" style="border:  0" matInput [(ngModel)]="data.count">
+  </mat-form-field>
+</div>
+<p *ngIf="error" style="color: red; font-size: 10px">* всі поля повинні бути заповнені</p>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Відмінити</button>
+  <button (click)="submit()" mat-button cdkFocusInitial>Відправити</button>
+</div>

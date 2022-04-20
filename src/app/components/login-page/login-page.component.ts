@@ -61,6 +61,10 @@ export class LoginPageComponent implements OnInit {
        if (isPresentUser) {
          // @ts-ignore
          localStorage.setItem('currentUserId', JSON.stringify(currentUser.id));
+         // @ts-ignore
+         localStorage.setItem('currentUserRole', currentUser.role);
+         // @ts-ignore
+         localStorage.setItem('currentUserEmail', JSON.stringify(currentUser.email));
 
          // @ts-ignore
          if (currentUser.password === password) {

@@ -39,6 +39,12 @@ import {OdessaWarehousePageComponent} from "./components/odessa-warehouse/odessa
 import {KeywWarehousePageComponent} from "./components/kyew-warehouse/keyw-warehouse-page.component";
 import {LvivWarehousePageComponent} from "./components/lviv-warehouse/lviv-warehouse-page.component";
 import {DneprWarehousePageComponent} from "./components/dnepr-warehouse/dnepr-warehouse-page.component";
+import {MatTabsModule} from "@angular/material/tabs";
+import { DialogRequestWarehouseComponent } from "./components/dialog-request-warehouse/dialog-request-warehouse.component";
+import {MatSelectModule} from "@angular/material/select";
+import {MatTableModule} from "@angular/material/table";
+import {EditDialogRequestWarehouseComponent} from "./components/edit-dialog-request-warehouse/edit-dialog-request-warehouse.component";
+import {DeleteDialogRequestWarehouseComponent} from "./components/delete-dialog-request-warehouse/delete-dialog-request-warehouse.component";
 
 @NgModule({
   declarations: [
@@ -63,6 +69,9 @@ import {DneprWarehousePageComponent} from "./components/dnepr-warehouse/dnepr-wa
     KeywWarehousePageComponent,
     LvivWarehousePageComponent,
     DneprWarehousePageComponent,
+    DialogRequestWarehouseComponent,
+    EditDialogRequestWarehouseComponent,
+    DeleteDialogRequestWarehouseComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +87,10 @@ import {DneprWarehousePageComponent} from "./components/dnepr-warehouse/dnepr-wa
     CarouselModule,
     WavesModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
+    MatTabsModule,
+    MatSelectModule,
+    MatTableModule
   ],
   providers: [
     AuthService,

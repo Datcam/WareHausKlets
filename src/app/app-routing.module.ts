@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@services/auth-guard.service';
-import { GamesPageComponent } from '@games-page/games-page.component';
 import { MainPageComponent } from '@main-page/main-page.component';
-import { LibraryPageComponent } from '@library-page/library-page.component';
-import { FriendsPageComponent } from '@friends-page/friends-page.component';
 import { ProfilePageComponent } from '@profile-page/profile-page.component';
 import { LoginPageComponent } from '@login-page/login-page.component';
 import { SignUpPageComponent } from "./components/sign-up-page/sign-up-page.component";

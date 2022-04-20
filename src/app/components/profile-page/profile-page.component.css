@@ -2,6 +2,20 @@
   color: var(--accent-color);
   font-size: 14px;
 }
+table {
+  width: 100%;
+}
+
+.accept {
+  background-color: #00800061;
+}
+
+.decline {
+  background-color: #ff00005e;
+}
+
+
+
 
 .card-title {
   display: flex;

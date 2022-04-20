@@ -18,6 +18,9 @@ export enum UserObjectProperty {
 
 export enum Message {
   SAVE_DATA = 'Ваші данні були успішно відправлені!',
+  SENT_REQUEST = 'Ваш запит на складське приміщення було створене та відправлене!',
+  EDIT_SENT_REQUEST = 'Ваш запит відредакторуван!',
+  DELETE_SENT_REQUEST = 'Ваш запит було видаленно!',
   SUCCESS_SIGN_UP = 'Ви успішно зарееструвались!',
   SUCCESS_SIGN_IN = 'Ви успішно увійшли!',
   ADD_FRIEND = 'Friend was successfully added!',
